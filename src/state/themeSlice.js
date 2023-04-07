@@ -37,7 +37,7 @@ export const themeSlice = createSlice({
       state.tertiaryColor = payload.tertiaryColor;
       saveThemeLocal({ ...state, tertiaryColor: state.tertiaryColor });
     },
-    setMode: (state) => {
+    toggleMode: (state) => {
       state.mode = state.mode === "light" ? "dark" : "light";
       saveThemeLocal({ ...state, mode: state.mode });
     },
@@ -46,7 +46,7 @@ export const themeSlice = createSlice({
 
 // Action creators are generated for each case reducer function
 export const {
-  setMode,
+  toggleMode,
   setBaseColor,
   setSecondaryColor,
   setTertiaryColor,

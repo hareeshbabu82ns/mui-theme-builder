@@ -7,13 +7,16 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 
 import customTheme from "theme";
 import ThemePage from "pages/theme/ThemePage";
+import ProtectedLayout from "pages/layout/ProtectedLayout";
+import LoginPage from "pages/user/Login";
+import SignupPage from "pages/user/Signup";
+import ElementsPage from "pages/elements";
 
 function App() {
   const themeState = useSelector((state) => state.theme);
   const theme = useMemo(
     () =>
       customTheme({
-        isMui: true,
         mode: themeState.mode,
         baseColor: themeState.baseColor,
         secondaryColor: themeState.secondaryColor,
@@ -27,7 +30,17 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline enableColorScheme />
       <LocalizationProvider dateAdapter={AdapterLuxon}>
-        <ThemePage />
+        <BrowserRouter>
+          <Routes>
+            <Route element={<ProtectedLayout />}>
+              <Route path="/" element={<Navigate to="/theme" replace />} />
+              <Route path="/components" element={<ElementsPage />} />
+              <Route path="/theme" element={<ThemePage />} />
+            </Route>
+            <Route path="/signin" element={<LoginPage />} />
+            <Route path="/signup" element={<SignupPage />} />
+          </Routes>
+        </BrowserRouter>
       </LocalizationProvider>
     </ThemeProvider>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Stack } from "@mui/material";
+import { Stack } from "@mui/material";
 
 import Header from "components/Header";
 import FlexBetween from "components/FlexBetween";
@@ -8,7 +8,7 @@ import ColorSystem from "components/ColorSystem";
 
 const ThemePage = () => {
   return (
-    <Box m="1.5rem 2.5rem">
+    <>
       <FlexBetween>
         <Header title="Theme Settings" subtitle="Manage Theme Settings" />
       </FlexBetween>
@@ -18,7 +18,7 @@ const ThemePage = () => {
 
         <ColorSystem />
       </Stack>
-    </Box>
+    </>
   );
 };
 

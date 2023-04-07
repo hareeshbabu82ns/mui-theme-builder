@@ -3,7 +3,7 @@ import { Box, Stack, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { ChromePicker, SliderPicker } from "react-color";
 import tinycolor from "tinycolor2";
-// import { useDebounce } from "./debounceHook";
+// import { useDebounce } from "utils/debounceHook";
 
 const sxSwatch = {
   padding: "5px",
