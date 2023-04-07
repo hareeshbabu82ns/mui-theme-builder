@@ -4,14 +4,34 @@ import { deepmerge } from "@mui/utils";
 import { getDesignTokens, getThemedComponents } from "./M3Theme";
 import { generateThemeSchemeFromColors, reverseTokens } from "./utils";
 
-export const customTheme = (customization) => {
-  const isDark = customization.mode === "dark";
-
+const customTheme = (customization) => {
   const baseColor = customization.baseColor || "#130019";
 
-  const themeScheme = generateThemeSchemeFromColors(baseColor, {
+  const { themeScheme, theme } = generateCustomTheme({
+    mode: customization.mode,
+    baseColor,
     secondaryColor: customization.secondaryColor,
     tertiaryColor: customization.tertiaryColor,
+  });
+
+  document
+    .querySelector('meta[name="theme-color"]')
+    ?.setAttribute("content", themeScheme[customization.mode].surface);
+
+  // console.log(newM3Theme);
+  return theme;
+};
+
+export const generateCustomTheme = ({
+  mode,
+  baseColor,
+  secondaryColor,
+  tertiaryColor,
+}) => {
+  const isDark = mode === "dark";
+  const themeScheme = generateThemeSchemeFromColors(baseColor, {
+    secondaryColor,
+    tertiaryColor,
   });
 
   const finalTones = !isDark
@@ -19,20 +39,16 @@ export const customTheme = (customization) => {
     : reverseTokens(themeScheme.tones);
 
   const designTokens = getDesignTokens({
-    mode: customization.mode,
-    scheme: themeScheme[customization.mode],
+    mode: mode,
+    scheme: themeScheme[mode],
     tones: finalTones,
   });
 
   let newM3Theme = createTheme(designTokens);
-  newM3Theme = deepmerge(newM3Theme, getThemedComponents(newM3Theme));
+  const themedComponents = getThemedComponents(newM3Theme);
+  newM3Theme = deepmerge(newM3Theme, themedComponents);
 
-  document
-    .querySelector('meta[name="theme-color"]')
-    ?.setAttribute("content", themeScheme[customization.mode].surface);
-
-  // console.log(newM3Theme);
-  return newM3Theme;
+  return { themeScheme, theme: newM3Theme, designTokens, themedComponents };
 };
 
 export default customTheme;

@@ -21,6 +21,9 @@ import PublicIcon from "@mui/icons-material/PublicOutlined";
 import SettingsEthernetIcon from "@mui/icons-material/SettingsEthernetOutlined";
 import SettingsInputComponentIcon from "@mui/icons-material/SettingsInputComponentOutlined";
 import ColorIcon from "@mui/icons-material/ColorLensOutlined";
+import SignInIcon from "@mui/icons-material/Login";
+import SignUpIcon from "@mui/icons-material/Password";
+
 import { Link, useLocation } from "react-router-dom";
 import muiLogo from "assets/mui.svg";
 
@@ -94,7 +97,7 @@ const SideBar = (props) => {
               </ListItem>
             )}
             {children.map(({ id: childId, icon, to }) => (
-              <ListItem key={childId}>
+              <ListItem key={`${id}-${childId}`}>
                 <ListItemButton
                   selected={
                     selectedIndex === childId || location.pathname === to
@@ -129,6 +132,22 @@ const categories = [
         icon: <DnsRoundedIcon />,
         to: "/components",
       },
+      {
+        id: "Theme Code",
+        icon: <DnsRoundedIcon />,
+        to: "/themeCode",
+      },
+    ],
+  },
+  {
+    id: "Sample Pages",
+    children: [
+      {
+        id: "Signin",
+        icon: <SignInIcon />,
+        to: "/signin",
+      },
+      { id: "Signup", icon: <SignUpIcon />, to: "/signup" },
     ],
   },
   {

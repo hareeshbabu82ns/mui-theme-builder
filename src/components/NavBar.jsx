@@ -14,15 +14,15 @@ import MenuIcon from "@mui/icons-material/MenuTwoTone";
 import ColorIcon from "@mui/icons-material/ColorLensOutlined";
 import DarkIcon from "@mui/icons-material/DarkModeOutlined";
 import LightIcon from "@mui/icons-material/LightModeOutlined";
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 import tinycolor from "tinycolor2";
 
 import { useDispatch } from "react-redux";
 import { setThemeColors, toggleMode } from "state/themeSlice";
 
-const NavBar = ({ onDrawerToggle, window, user }) => {
+const NavBar = ({ onDrawerToggle, window, user, sx }) => {
   const { palette } = useTheme();
-  const location = useLocation();
+  // const location = useLocation();
   const dispatch = useDispatch();
 
   const changeThemeMode = () => dispatch(toggleMode());

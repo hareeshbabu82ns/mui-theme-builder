@@ -1,7 +1,7 @@
 import NavBar from "components/NavBar";
 import SideBar from "components/SideBar";
 
-const { Box, useMediaQuery, useTheme, Container } = require("@mui/material");
+const { Box, useMediaQuery, useTheme } = require("@mui/material");
 const { useState } = require("react");
 const { useSelector } = require("react-redux");
 const { Outlet, Navigate, useLocation } = require("react-router-dom");
@@ -61,7 +61,14 @@ function ProtectedLayout() {
 
       <Box sx={{ flex: 1, display: "flex", flexDirection: "column" }}>
         <NavBar onDrawerToggle={handleDrawerToggle} user={data || {}} />
-        <Box m="1.5rem 1.5rem">
+        <Box
+          m="1.5rem 1.5rem"
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            minHeight: "91vh",
+          }}
+        >
           <Outlet />
         </Box>
       </Box>

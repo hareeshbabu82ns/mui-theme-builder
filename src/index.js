@@ -10,12 +10,14 @@ import store from "state";
 
 import App from "App";
 import reportWebVitals from "reportWebVitals";
+// import ThemedApp from "pages/theme-applied";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <ReduxProvider store={store}>
       <App />
+      {/* <ThemedApp /> */}
       <ToastContainer style={{ width: "500px" }} />
     </ReduxProvider>
   </React.StrictMode>
