@@ -12,6 +12,7 @@ const customTheme = (customization) => {
     baseColor,
     secondaryColor: customization.secondaryColor,
     tertiaryColor: customization.tertiaryColor,
+    customComponents: customization.customComponents,
   });
 
   document
@@ -27,6 +28,7 @@ export const generateCustomTheme = ({
   baseColor,
   secondaryColor,
   tertiaryColor,
+  customComponents,
 }) => {
   const isDark = mode === "dark";
   const themeScheme = generateThemeSchemeFromColors(baseColor, {
@@ -44,11 +46,20 @@ export const generateCustomTheme = ({
     tones: finalTones,
   });
 
-  let newM3Theme = createTheme(designTokens);
+  const newM3Theme = createTheme(designTokens);
   const themedComponents = getThemedComponents(newM3Theme);
-  newM3Theme = deepmerge(newM3Theme, themedComponents);
+  const customThemedComponents = customComponents
+    ? deepmerge(themedComponents, { components: customComponents })
+    : themedComponents;
+  const theme = deepmerge(newM3Theme, customThemedComponents);
+  // console.log(newM3Theme.components);
 
-  return { themeScheme, theme: newM3Theme, designTokens, themedComponents };
+  return {
+    themeScheme,
+    theme,
+    designTokens,
+    themedComponents: customThemedComponents,
+  };
 };
 
 export default customTheme;

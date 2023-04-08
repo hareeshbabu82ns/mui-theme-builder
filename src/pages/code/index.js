@@ -9,7 +9,12 @@ import { dark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import remarkGfm from "remark-gfm";
 import { generateCustomTheme } from "theme";
 
-const genTheme = ({ baseColor, secondaryColor, tertiaryColor }) => {
+const genTheme = ({
+  baseColor,
+  secondaryColor,
+  tertiaryColor,
+  customComponents,
+}) => {
   const {
     designTokens: designTokensLight,
     themedComponents: themedComponentsLight,
@@ -18,6 +23,7 @@ const genTheme = ({ baseColor, secondaryColor, tertiaryColor }) => {
     baseColor,
     secondaryColor,
     tertiaryColor,
+    customComponents,
   });
   const {
     designTokens: designTokensDark,
@@ -27,6 +33,7 @@ const genTheme = ({ baseColor, secondaryColor, tertiaryColor }) => {
     baseColor,
     secondaryColor,
     tertiaryColor,
+    customComponents,
   });
   return {
     designTokensLight,
@@ -49,6 +56,7 @@ const ThemeCodePage = () => {
         baseColor: themeState.baseColor,
         secondaryColor: themeState.secondaryColor,
         tertiaryColor: themeState.tertiaryColor,
+        customComponents: themeState.customComponents,
       }),
     [themeState]
   );

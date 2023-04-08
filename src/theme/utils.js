@@ -69,13 +69,13 @@ export function themeFromColors(
   { secondaryColor, tertiaryColor, customColors } = {}
 ) {
   const source = argbFromHex(colorBase);
-  const palette = secondaryColor
-    ? CorePalette.contentFromColors({
-        primary: source,
-        secondary: argbFromHex(secondaryColor),
-        tertiary: argbFromHex(tertiaryColor),
-      })
-    : CorePalette.of(source);
+  const colors = { primary: source };
+  if (secondaryColor) colors["secondary"] = argbFromHex(secondaryColor);
+  if (tertiaryColor) colors["tertiary"] = argbFromHex(tertiaryColor);
+  const palette =
+    secondaryColor || tertiaryColor
+      ? CorePalette.contentFromColors(colors)
+      : CorePalette.of(source);
 
   return {
     source: {

@@ -117,12 +117,35 @@ function SketchColorPicker({
         </Stack>
       </Box>
       {!disabled && isChrome && displayColorPicker ? (
-        <Box sx={{ ...sxPopover, bgcolor: theme.palette.grey[600] }}>
+        <Box
+          sx={{
+            ...sxPopover,
+            bgcolor: theme.palette.grey[600],
+            input: {
+              color: `${theme.palette.text.primary} !important`,
+              bgcolor: theme.palette.background.default,
+            },
+            label: {
+              color: `${theme.palette.text.primary} !important`,
+            },
+            svg: {
+              fill: `${theme.palette.text.primary} !important`,
+            },
+          }}
+        >
           <Box sx={sxCover} onClick={handleClose} />
           <ChromePicker
             color={color}
             onChangeComplete={handleChange}
             disableAlpha
+            defaultView="hsl"
+            styles={{
+              disableAlpha: {
+                body: {
+                  background: theme.palette.background.tile,
+                },
+              },
+            }}
           />
         </Box>
       ) : null}

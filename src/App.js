@@ -22,6 +22,7 @@ function App() {
         baseColor: themeState.baseColor,
         secondaryColor: themeState.secondaryColor,
         tertiaryColor: themeState.tertiaryColor,
+        customComponents: themeState.customComponents,
         fontFamily: "Inter, sans-serif",
       }),
     [themeState]
