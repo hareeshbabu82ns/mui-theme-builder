@@ -2,7 +2,11 @@ import { createTheme } from "@mui/material";
 import { deepmerge } from "@mui/utils";
 
 import { getDesignTokens, getThemedComponents } from "./M3Theme";
-import { generateThemeSchemeFromColors, reverseTokens } from "./utils";
+import {
+  generateThemeSchemeFromColors,
+  parseThemeSimple,
+  reverseTokens,
+} from "./utils";
 
 const customTheme = (customization) => {
   const baseColor = customization.baseColor || "#130019";
@@ -49,7 +53,9 @@ export const generateCustomTheme = ({
   const newM3Theme = createTheme(designTokens);
   const themedComponents = getThemedComponents(newM3Theme);
   const customThemedComponents = customComponents
-    ? deepmerge(themedComponents, { components: customComponents })
+    ? deepmerge(themedComponents, {
+        components: parseThemeSimple(customComponents, newM3Theme),
+      })
     : themedComponents;
   const theme = deepmerge(newM3Theme, customThemedComponents);
   // console.log(newM3Theme.components);

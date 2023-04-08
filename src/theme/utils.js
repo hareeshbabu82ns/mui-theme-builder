@@ -5,6 +5,7 @@ import {
   customColor,
   hexFromArgb,
 } from "@material/material-color-utilities";
+import { get } from "utils";
 
 export const generateThemeSchemeFromColors = (
   colorBase,
@@ -116,3 +117,16 @@ export function reverseTokens(tokensDark) {
   });
   return reversedTokens;
 }
+
+export const parseThemeSimple = (jsonStr, theme) => {
+  return JSON.parse(jsonStr, (key, value) => {
+    if (typeof value === "string") {
+      if (value.startsWith("theme.")) {
+        // theme values
+        const valStr = value.replace("theme.", "");
+        return get(theme, valStr, "");
+      }
+    }
+    return value;
+  });
+};

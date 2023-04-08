@@ -1,14 +1,28 @@
 import React, { useEffect, useState } from "react";
 import tinycolor from "tinycolor2";
-import { Box, Button, Stack, Typography, useTheme } from "@mui/material";
+import {
+  Box,
+  Button,
+  Grid,
+  IconButton,
+  Stack,
+  Toolbar,
+  Tooltip,
+  Typography,
+  useTheme,
+} from "@mui/material";
 import SketchColorPicker from "./SketchColorPicker";
 import { useDispatch, useSelector } from "react-redux";
-import { setThemeColors } from "../state/themeSlice";
+import { setMode, setTheme, setThemeColors } from "../state/themeSlice";
 import {
   // ColorizeOutlined as BaseColorIcon,
   ColorLensOutlined,
+  SaveAltOutlined,
+  FileUploadOutlined,
 } from "@mui/icons-material";
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
+import { jsonToURL } from "utils";
+import { setCustomComponents } from "../state/themeSlice";
 
 const ThemeGenerator = ({ isSidebar }) => {
   const theme = useTheme();
@@ -61,6 +75,37 @@ const ThemeGenerator = ({ isSidebar }) => {
     );
   };
 
+  const handleSaveTheme = () => {
+    const url = jsonToURL(themeColors);
+    const link = document.createElement("a");
+    link.href = url;
+    link.setAttribute("download", "theme-settings.json");
+    document.body.appendChild(link);
+    link.click();
+
+    // Clean up and remove the link
+    link.parentNode.removeChild(link);
+  };
+
+  const handleLoadTheme = (file) => {
+    if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function (event) {
+      const savedTheme = JSON.parse(event.target.result);
+      // console.log("File content:", savedTheme);
+      dispatch(
+        setTheme({
+          mode: savedTheme.mode,
+          baseColor: savedTheme.baseColor,
+          secondaryColor: savedTheme.secondaryColor,
+          tertiaryColor: savedTheme.tertiaryColor,
+          customComponents: savedTheme.customComponents,
+        })
+      );
+    };
+    reader.readAsText(file);
+  };
+
   return (
     <Box
       backgroundColor={isSidebar ? "inherited" : theme.palette.background.tile}
@@ -69,15 +114,59 @@ const ThemeGenerator = ({ isSidebar }) => {
       mt={isSidebar ? "none" : "2rem"}
     >
       <Stack direction="column" gap={4} sx={{ flexGrow: 1 }}>
-        <Stack direction="row" gap={2}>
+        {/* <Stack direction="row" gap={2} alignItems="center">
           <ColorLensOutlined
-            fontSize="small"
+            fontSize="large"
             sx={{ color: theme.palette.tertiary[900] }}
           />
           <Typography variant="h4" color={theme.palette.tertiary[700]}>
             Theme Generator
           </Typography>
-        </Stack>
+        </Stack> */}
+
+        <Toolbar disableGutters>
+          <Grid container spacing={1} alignItems="center">
+            <Grid item>
+              <ColorLensOutlined
+                fontSize="large"
+                sx={{ color: theme.palette.tertiary[900] }}
+              />
+            </Grid>
+            <Grid item sx={{ display: "flex", alignItems: "baseline" }}>
+              <Typography
+                color="inherit"
+                sx={{ fontWeight: 500, letterSpacing: 0.5, fontSize: 20 }}
+              >
+                Theme Generator
+              </Typography>
+            </Grid>
+
+            <Grid item xs></Grid>
+            <Grid item>
+              <Tooltip title="Save Theme">
+                <IconButton
+                  size="large"
+                  color="inherit"
+                  onClick={() => handleSaveTheme()}
+                >
+                  <SaveAltOutlined />
+                </IconButton>
+              </Tooltip>
+              <Tooltip title="Load Theme">
+                <IconButton size="large" color="inherit" component="label">
+                  <input
+                    hidden
+                    accept="application/json"
+                    type="file"
+                    onChange={(e) => handleLoadTheme(e?.target?.files[0])}
+                  />
+                  <FileUploadOutlined />
+                </IconButton>
+              </Tooltip>
+            </Grid>
+          </Grid>
+        </Toolbar>
+
         <Stack direction={isSidebar ? "column" : "row"} gap={2}>
           <Button color="primary" variant="contained" onClick={genBaseColor}>
             {/* <BaseColorIcon sx={{ mr: "10px" }} /> */}
