@@ -12,10 +12,6 @@ import { toast } from "react-toastify";
 const ColorSystem = () => {
   return (
     <>
-      <Typography variant="h4" marginBottom={2}>
-        Color System
-      </Typography>
-
       <PaletteMainColors />
 
       <PaletteColorVariations />

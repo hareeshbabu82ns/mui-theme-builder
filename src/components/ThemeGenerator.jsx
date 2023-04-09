@@ -13,7 +13,7 @@ import {
 } from "@mui/material";
 import SketchColorPicker from "./SketchColorPicker";
 import { useDispatch, useSelector } from "react-redux";
-import { setMode, setTheme, setThemeColors } from "../state/themeSlice";
+import { setTheme, setThemeColors } from "../state/themeSlice";
 import {
   // ColorizeOutlined as BaseColorIcon,
   ColorLensOutlined,
@@ -22,7 +22,6 @@ import {
 } from "@mui/icons-material";
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 import { jsonToURL } from "utils";
-import { setCustomComponents } from "../state/themeSlice";
 
 const ThemeGenerator = ({ isSidebar }) => {
   const theme = useTheme();

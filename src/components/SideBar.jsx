@@ -128,6 +128,11 @@ const categories = [
         to: "/theme",
       },
       {
+        id: "Theme Colors",
+        icon: <DnsRoundedIcon />,
+        to: "/themeColors",
+      },
+      {
         id: "Components",
         icon: <DnsRoundedIcon />,
         to: "/components",

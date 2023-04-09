@@ -12,6 +12,7 @@ import LoginPage from "pages/user/Login";
 import SignupPage from "pages/user/Signup";
 import ElementsPage from "pages/elements";
 import ThemeCodePage from "pages/code";
+import ThemeColorsPage from "pages/theme/ThemeColorsPage";
 
 function App() {
   const themeState = useSelector((state) => state.theme);
@@ -38,6 +39,7 @@ function App() {
               <Route path="/" element={<Navigate to="/theme" replace />} />
               <Route path="/components" element={<ElementsPage />} />
               <Route path="/theme" element={<ThemePage />} />
+              <Route path="/themeColors" element={<ThemeColorsPage />} />
               <Route path="/themeCode" element={<ThemeCodePage />} />
             </Route>
             <Route path="/signin" element={<LoginPage />} />

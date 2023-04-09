@@ -3,20 +3,20 @@ import { Stack } from "@mui/material";
 
 import Header from "components/Header";
 import FlexBetween from "components/FlexBetween";
-import ThemeGenerator from "components/ThemeGenerator";
+import ColorSystem from "components/ColorSystem";
 
-const ThemePage = () => {
+const ThemeColorsPage = () => {
   return (
     <>
       <FlexBetween>
-        <Header title="Theme Settings" subtitle="Manage Theme Settings" />
+        <Header title="Theme Colors" />
       </FlexBetween>
 
       <Stack direction="column" gap={2}>
-        <ThemeGenerator />
+        <ColorSystem />
       </Stack>
     </>
   );
 };
 
-export default ThemePage;
+export default ThemeColorsPage;
