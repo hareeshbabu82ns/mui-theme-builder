@@ -13,6 +13,7 @@ import SignupPage from "pages/user/Signup";
 import ElementsPage from "pages/elements";
 import ThemeCodePage from "pages/code";
 import ThemeColorsPage from "pages/theme/ThemeColorsPage";
+import ComponentSettings from "pages/theme/ComponentSettings";
 
 function App() {
   const themeState = useSelector((state) => state.theme);
@@ -38,7 +39,9 @@ function App() {
             <Route element={<ProtectedLayout />}>
               <Route path="/" element={<Navigate to="/theme" replace />} />
               <Route path="/components" element={<ElementsPage />} />
-              <Route path="/theme" element={<ThemePage />} />
+              <Route path="/theme" element={<ThemePage />}>
+                <Route path=":component" element={<ComponentSettings />} />
+              </Route>
               <Route path="/themeColors" element={<ThemeColorsPage />} />
               <Route path="/themeCode" element={<ThemeCodePage />} />
             </Route>

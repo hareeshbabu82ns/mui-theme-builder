@@ -118,8 +118,8 @@ export function reverseTokens(tokensDark) {
   return reversedTokens;
 }
 
-export const parseThemeSimple = (jsonStr, theme) => {
-  return JSON.parse(jsonStr, (key, value) => {
+export const parseThemeSimple = (jsObj, theme) => {
+  return JSON.parse(JSON.stringify(jsObj), (key, value) => {
     if (typeof value === "string") {
       if (value.startsWith("theme.")) {
         // theme values

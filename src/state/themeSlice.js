@@ -19,7 +19,7 @@ const initialState = {
   baseColor,
   secondaryColor,
   tertiaryColor,
-  customComponents,
+  customComponents: customComponents ?? {},
 };
 
 export const themeSlice = createSlice({
@@ -31,7 +31,7 @@ export const themeSlice = createSlice({
       state.baseColor = payload.baseColor;
       state.secondaryColor = payload.secondaryColor;
       state.tertiaryColor = payload.tertiaryColor;
-      state.customComponents = payload.customComponents;
+      state.customComponents = payload.customComponents || {};
       saveThemeLocal({
         ...state,
         mode: state.mode,
@@ -53,23 +53,23 @@ export const themeSlice = createSlice({
       });
     },
     setBaseColor: (state, { payload }) => {
-      state.baseColor = payload.baseColor;
+      state.baseColor = payload;
       saveThemeLocal({ ...state, baseColor: state.baseColor });
     },
     setSecondaryColor: (state, { payload }) => {
-      state.secondaryColor = payload.secondaryColor;
+      state.secondaryColor = payload;
       saveThemeLocal({ ...state, secondaryColor: state.secondaryColor });
     },
     setTertiaryColor: (state, { payload }) => {
-      state.tertiaryColor = payload.tertiaryColor;
+      state.tertiaryColor = payload;
       saveThemeLocal({ ...state, tertiaryColor: state.tertiaryColor });
     },
     setCustomComponents: (state, { payload }) => {
-      state.customComponents = payload.customComponents;
+      state.customComponents = payload || {};
       saveThemeLocal({ ...state, customComponents: state.customComponents });
     },
     setMode: (state, { payload }) => {
-      state.mode = payload.mode;
+      state.mode = payload;
       saveThemeLocal({ ...state, mode: state.mode });
     },
     toggleMode: (state) => {

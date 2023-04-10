@@ -28,8 +28,14 @@ export const saveThemeLocal = (themeData) =>
 
 export const loadThemeLocal = () => {
   const theme = localStorage.getItem("theme");
-  if (theme) return JSON.parse(localStorage.getItem("theme"));
-  else {
+  // if (theme) return JSON.parse(localStorage.getItem("theme"));
+  if (theme) {
+    const localTheme = JSON.parse(localStorage.getItem("theme"));
+    // console.log(typeof localTheme?.customComponents);
+    if (typeof localTheme?.customComponents === "string")
+      localTheme["customComponents"] = JSON.parse(localTheme?.customComponents);
+    return localTheme;
+  } else {
     localStorage.setItem("theme", JSON.stringify(initThemeState));
     return initThemeState;
   }
@@ -40,7 +46,7 @@ export const clearThemeLocal = (themeData) =>
 
 export const get = (object, path, defaultValue = null) => {
   const paths = path.split(".");
-  let current = object;
+  let current = object ?? {};
   for (let i = 0; i < paths.length; i++) {
     if (current[paths[i]] === undefined) {
       return defaultValue;
