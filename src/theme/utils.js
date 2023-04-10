@@ -121,7 +121,9 @@ export function reverseTokens(tokensDark) {
 export const parseThemeSimple = (jsObj, theme) => {
   return JSON.parse(JSON.stringify(jsObj), (key, value) => {
     if (typeof value === "string") {
-      if (value.startsWith("theme.")) {
+      if (value.startsWith("theme.spacing(")) {
+        return theme.spacing(Number(value.match(/\d(?=\))/)?.[0] ?? "0"));
+      } else if (value.startsWith("theme.")) {
         // theme values
         const valStr = value.replace("theme.", "");
         return get(theme, valStr, "");

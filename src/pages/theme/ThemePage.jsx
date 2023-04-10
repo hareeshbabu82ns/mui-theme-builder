@@ -22,7 +22,7 @@ const ThemePage = () => {
 
   const params = useParams();
 
-  const [component, setComponent] = useState(params?.component);
+  const [component, setComponent] = useState(params?.component ?? "");
 
   const handleComponentSelect = (e) => {
     setComponent(e.target.value);

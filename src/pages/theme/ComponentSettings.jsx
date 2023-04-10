@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { COMPONENT_SETTINGS } from "./utils";
-import { Box, Stack, Typography, useTheme } from "@mui/material";
+import { Box, Slider, Stack, Typography, useTheme } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { deepmerge } from "@mui/utils";
 import { get } from "utils";
 import SketchColorPicker from "components/SketchColorPicker";
 import { debounce } from "utils/debounceHook";
 import { setCustomComponents } from "state/themeSlice";
+import Buttons from "pages/elements/samples/Buttons";
+import Dividers from "pages/elements/samples/Dividers";
+import IconButtons from "pages/elements/samples/IconButtons";
 
 const ComponentSettings = () => {
   const { component } = useParams();
@@ -26,7 +29,7 @@ const ComponentSettings = () => {
   const handleStyleOverrides = (styleObj) => {
     const custComp = { [component]: { ...styleObj } };
     const components = deepmerge(customComponents, custComp);
-    console.log(components);
+    // console.log(components);
     dispatch(setCustomComponents(components));
   };
   const debouncedStyleChange = debounce(
@@ -40,7 +43,7 @@ const ComponentSettings = () => {
         <span style={{ fontWeight: "bold" }}>{settings.element}</span> Settings
       </Typography>
 
-      <Stack direction="row">
+      <Stack direction="row" gap={4}>
         <Box flex={1}>
           {settings.styleOverrides && (
             <StyleOverrides
@@ -50,12 +53,27 @@ const ComponentSettings = () => {
             />
           )}
         </Box>
-        <Box flex={1}>Compoment Demo</Box>
+        <Box flex={1}>
+          <ComponentsDemo component={component} />
+        </Box>
       </Stack>
 
       {/* <pre> {JSON.stringify(settings, null, "\t")}</pre> */}
     </Box>
   );
+};
+
+const ComponentsDemo = ({ component }) => {
+  switch (component) {
+    case "MuiButton":
+      return <Buttons />;
+    case "MuiDivider":
+      return <Dividers />;
+    case "MuiIconButton":
+      return <IconButtons />;
+    default:
+      return <>No Demo Components for {component}</>;
+  }
 };
 
 const StyleOverrides = ({ settingConfig, settingData, onChange }) => {
@@ -68,32 +86,36 @@ const StyleOverrides = ({ settingConfig, settingData, onChange }) => {
   return (
     <>
       <Typography fontWeight="bold">StyleOverrides</Typography>
-      {Object.entries(settingConfig).map(([styleId, v]) => {
-        // each style override
-        return (
-          <Box key={styleId}>
-            <Typography fontWeight="bold">{styleId}</Typography>
-            {Object.entries(v).map(([attrId, settingConfig]) => {
-              // each style attribute
-              const sData = get(settingData, `${styleId}.${attrId}`, "");
-              return (
-                <StyleAttribute
-                  key={attrId}
-                  settingId={attrId}
-                  settingConfig={settingConfig}
-                  settingData={sData}
-                  onChange={(value) =>
-                    handleStyleChange(styleId, attrId, value)
-                  }
-                />
-              );
-            })}
-            {/* <pre>
+      <Stack gap={2} mt={1}>
+        {Object.entries(settingConfig).map(([styleId, v]) => {
+          // each style override
+          return (
+            <Box key={styleId} border={1} p={2}>
+              <Typography fontWeight="bold">{styleId}</Typography>
+              <Stack gap={2} mt={1}>
+                {Object.entries(v).map(([attrId, settingConfig]) => {
+                  // each style attribute
+                  const sData = get(settingData, `${styleId}.${attrId}`, "");
+                  return (
+                    <StyleAttribute
+                      key={attrId}
+                      settingId={attrId}
+                      settingConfig={settingConfig}
+                      settingData={sData}
+                      onChange={(value) =>
+                        handleStyleChange(styleId, attrId, value)
+                      }
+                    />
+                  );
+                })}
+              </Stack>
+              {/* <pre>
               {k}-{JSON.stringify(v, null, "\t")}
             </pre> */}
-          </Box>
-        );
-      })}
+            </Box>
+          );
+        })}
+      </Stack>
     </>
   );
 };
@@ -145,8 +167,8 @@ const StyleAttributeColor = ({
   };
 
   return (
-    <>
-      {/* <Typography fontWeight="bold">{settingId}</Typography> */}
+    <Stack gap={2}>
+      <Typography fontWeight="bold">{settingId}</Typography>
       <SketchColorPicker
         colorKey={settingId}
         color={color}
@@ -155,7 +177,7 @@ const StyleAttributeColor = ({
       />
       {/* <pre>{JSON.stringify(settingConfig, null, "\t")}</pre>
       <pre>{JSON.stringify(settingData, null, "\t")}</pre> */}
-    </>
+    </Stack>
   );
 };
 
@@ -165,11 +187,31 @@ const StyleAttributeSpacing = ({
   settingData,
   onChange,
 }) => {
+  const s =
+    typeof settingData === "string"
+      ? settingData?.startsWith("theme.spacing")
+        ? Number(settingData.match(/\d(?=\))/)?.[0] ?? "0")
+        : Number(settingData?.replace("px", ""))
+      : settingData ?? 0;
+  const [space, setSpace] = useState(s);
+  const handleSpaceChange = (e, space) => {
+    setSpace(space);
+    if (onChange) onChange(`theme.spacing(${space})`);
+  };
+
   return (
     <>
       <Typography fontWeight="bold">{settingId}</Typography>
-      <pre>{JSON.stringify(settingConfig, null, "\t")}</pre>
-      <pre>{JSON.stringify(settingData, null, "\t")}</pre>
+      <Slider
+        value={space}
+        max={9}
+        size="medium"
+        aria-label="spacing"
+        valueLabelDisplay="auto"
+        onChange={handleSpaceChange}
+      />
+      {/* <pre>{JSON.stringify(settingConfig, null, "\t")}</pre>
+      <pre>{JSON.stringify(settingData, null, "\t")}</pre> */}
     </>
   );
 };
