@@ -1,9 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { COMPONENT_SETTINGS } from "./utils";
-import { Box, Slider, Stack, Typography, useTheme } from "@mui/material";
+import {
+  Box,
+  IconButton,
+  Slider,
+  Stack,
+  Typography,
+  useTheme,
+} from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { deepmerge } from "@mui/utils";
+import DeleteIcon from "@mui/icons-material/Delete";
 import { get } from "utils";
 import SketchColorPicker from "components/SketchColorPicker";
 import { debounce } from "utils/debounceHook";
@@ -11,6 +19,8 @@ import { setCustomComponents } from "state/themeSlice";
 import Buttons from "pages/elements/samples/Buttons";
 import Dividers from "pages/elements/samples/Dividers";
 import IconButtons from "pages/elements/samples/IconButtons";
+import AppBars from "pages/elements/samples/AppBars";
+import ThemeColorPicker from "components/ThemeColorPicker";
 
 const ComponentSettings = () => {
   const { component } = useParams();
@@ -71,6 +81,8 @@ const ComponentsDemo = ({ component }) => {
       return <Dividers />;
     case "MuiIconButton":
       return <IconButtons />;
+    case "MuiAppBar":
+      return <AppBars />;
     default:
       return <>No Demo Components for {component}</>;
   }
@@ -160,21 +172,48 @@ const StyleAttributeColor = ({
   const c = settingData?.startsWith("theme.")
     ? get(theme, settingData.replace("theme.", ""))
     : settingData;
+
   const [color, setColor] = useState(c);
+
+  const [colorPath, setColorPath] = useState(
+    settingData?.startsWith("theme.") ? settingData : ""
+  );
+
   const handleColorChange = (color) => {
     setColor(color);
+    setColorPath("");
+    if (onChange) onChange(color);
+  };
+
+  const handleThemeColorChange = (color) => {
+    setColor(get(theme, color.replace("theme.", "")));
+    setColorPath(color);
     if (onChange) onChange(color);
   };
 
   return (
     <Stack gap={2}>
       <Typography fontWeight="bold">{settingId}</Typography>
-      <SketchColorPicker
-        colorKey={settingId}
-        color={color}
-        varient="chrome"
-        onChange={handleColorChange}
-      />
+      <Stack gap={2} direction="row" alignItems="center">
+        <Box sx={{ flex: 1 }}>
+          <ThemeColorPicker
+            colorKey={settingId}
+            themeColorPath={colorPath}
+            onChange={handleThemeColorChange}
+          />
+        </Box>
+        <Box sx={{ flex: 1 }}>
+          <SketchColorPicker
+            colorKey={settingId}
+            color={color}
+            varient="chrome"
+            onChange={handleColorChange}
+          />
+        </Box>
+        <IconButton onClick={() => handleColorChange(undefined)}>
+          <DeleteIcon />
+        </IconButton>
+      </Stack>
       {/* <pre>{JSON.stringify(settingConfig, null, "\t")}</pre>
       <pre>{JSON.stringify(settingData, null, "\t")}</pre> */}
     </Stack>

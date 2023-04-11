@@ -128,8 +128,9 @@ export const getDesignTokens = ({ mode, scheme, tones, customizations }) => {
       shadow: scheme.shadow,
 
       background: {
-        // default: scheme.background,
-        // paper: scheme.surface,
+        main: isDark
+          ? darken(scheme.primary, 0.75)
+          : lighten(scheme.primary, 0.9),
         default: isDark
           ? darken(scheme.primary, 0.75)
           : lighten(scheme.primary, 0.9),
@@ -148,6 +149,7 @@ export const getDesignTokens = ({ mode, scheme, tones, customizations }) => {
         black: scheme.onBackground,
       },
       text: {
+        main: scheme.onSurface,
         primary: scheme.onSurface,
         secondary: scheme.onSecondaryContainer,
       },

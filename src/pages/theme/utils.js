@@ -44,4 +44,27 @@ export const COMPONENT_SETTINGS = [
       },
     },
   },
+  {
+    id: "MuiAppBar",
+    element: "MuiAppBar",
+    title: "AppBar",
+    styleOverrides: {
+      colorDefault: {
+        background: {
+          ...SETTING_COLOR,
+        },
+        color: {
+          ...SETTING_COLOR,
+        },
+      },
+      colorPrimary: {
+        background: {
+          ...SETTING_COLOR,
+        },
+        color: {
+          ...SETTING_COLOR,
+        },
+      },
+    },
+  },
 ];
