@@ -14,13 +14,10 @@ import {
 } from "@mui/material";
 import { useState, useEffect } from "react";
 
-import PeopleIcon from "@mui/icons-material/PeopleOutline";
-import DnsRoundedIcon from "@mui/icons-material/DnsOutlined";
-import PermMediaOutlinedIcon from "@mui/icons-material/PhotoSizeSelectActualOutlined";
-import PublicIcon from "@mui/icons-material/PublicOutlined";
-import SettingsEthernetIcon from "@mui/icons-material/SettingsEthernetOutlined";
-import SettingsInputComponentIcon from "@mui/icons-material/SettingsInputComponentOutlined";
-import ColorIcon from "@mui/icons-material/ColorLensOutlined";
+import ColorsIcon from "@mui/icons-material/ColorLensOutlined";
+import ComponentsIcon from "@mui/icons-material/SettingsInputComponentOutlined";
+import CodeIcon from "@mui/icons-material/CodeOutlined";
+import ThemeIcon from "@mui/icons-material/ColorizeOutlined";
 import SignInIcon from "@mui/icons-material/Login";
 import SignUpIcon from "@mui/icons-material/Password";
 
@@ -119,22 +116,22 @@ const categories = [
     children: [
       {
         id: "Theme",
-        icon: <ColorIcon />,
+        icon: <ThemeIcon />,
         to: "/theme",
       },
       {
         id: "Theme Colors",
-        icon: <DnsRoundedIcon />,
+        icon: <ColorsIcon />,
         to: "/themeColors",
       },
       {
         id: "Components",
-        icon: <DnsRoundedIcon />,
+        icon: <ComponentsIcon />,
         to: "/components",
       },
       {
         id: "Theme Code",
-        icon: <DnsRoundedIcon />,
+        icon: <CodeIcon />,
         to: "/themeCode",
       },
     ],
@@ -148,23 +145,6 @@ const categories = [
         to: "/signin",
       },
       { id: "Signup", icon: <SignUpIcon />, to: "/signup" },
-    ],
-  },
-  {
-    id: "Build",
-    children: [
-      {
-        id: "Authentication",
-        icon: <PeopleIcon />,
-      },
-      { id: "Database", icon: <DnsRoundedIcon /> },
-      { id: "Storage", icon: <PermMediaOutlinedIcon /> },
-      { id: "Hosting", icon: <PublicIcon /> },
-      { id: "Functions", icon: <SettingsEthernetIcon /> },
-      {
-        id: "Machine learning",
-        icon: <SettingsInputComponentIcon />,
-      },
     ],
   },
 ];

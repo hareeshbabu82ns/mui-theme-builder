@@ -11,14 +11,14 @@ import {
   useTheme,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/MenuTwoTone";
-import ColorIcon from "@mui/icons-material/ColorLensOutlined";
+// import ColorIcon from "@mui/icons-material/ColorLensOutlined";
 import DarkIcon from "@mui/icons-material/DarkModeOutlined";
 import LightIcon from "@mui/icons-material/LightModeOutlined";
 // import { useLocation } from "react-router-dom";
-import tinycolor from "tinycolor2";
+// import tinycolor from "tinycolor2";
 
 import { useDispatch } from "react-redux";
-import { setThemeColors, toggleMode } from "state/themeSlice";
+import { toggleMode } from "state/themeSlice";
 
 const NavBar = ({ onDrawerToggle, window, user, sx }) => {
   const { palette } = useTheme();
@@ -27,18 +27,18 @@ const NavBar = ({ onDrawerToggle, window, user, sx }) => {
 
   const changeThemeMode = () => dispatch(toggleMode());
 
-  const changeThemeScheme = async () => {
-    const randaomColors = tinycolor
-      .random()
-      .tetrad()
-      .map((c) => c.toHexString());
-    const payload = {
-      baseColor: randaomColors[0],
-      secondaryColor: randaomColors[1],
-      tertiaryColor: randaomColors[2],
-    };
-    dispatch(setThemeColors(payload));
-  };
+  // const changeThemeScheme = async () => {
+  //   const randaomColors = tinycolor
+  //     .random()
+  //     .tetrad()
+  //     .map((c) => c.toHexString());
+  //   const payload = {
+  //     baseColor: randaomColors[0],
+  //     secondaryColor: randaomColors[1],
+  //     tertiaryColor: randaomColors[2],
+  //   };
+  //   dispatch(setThemeColors(payload));
+  // };
 
   const trigger = useScrollTrigger({
     disableHysteresis: true,
@@ -68,7 +68,7 @@ const NavBar = ({ onDrawerToggle, window, user, sx }) => {
             </Grid>
 
             <Grid item xs></Grid>
-            <Grid item>
+            {/* <Grid item>
               <Tooltip title="Change Color">
                 <IconButton
                   size="large"
@@ -78,7 +78,7 @@ const NavBar = ({ onDrawerToggle, window, user, sx }) => {
                   <ColorIcon />
                 </IconButton>
               </Tooltip>
-            </Grid>
+            </Grid> */}
 
             <Grid item>
               <Tooltip title="Switch Theme">
