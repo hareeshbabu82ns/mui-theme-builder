@@ -1,14 +1,20 @@
 import { useTheme } from "@emotion/react";
 import {
+  Box,
   FormControl,
   InputLabel,
   MenuItem,
   Select,
   Stack,
+  ToggleButton,
+  ToggleButtonGroup,
+  Tooltip,
   Typography,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import SketchColorPicker from "./SketchColorPicker";
+import TonesIcon from "@mui/icons-material/OpacityOutlined";
+import PalettesIcon from "@mui/icons-material/PaletteOutlined";
 
 function ThemeColorPicker({ colorKey, themeColorPath, onChange }) {
   const theme = useTheme();
@@ -35,41 +41,61 @@ function ThemeColorPicker({ colorKey, themeColorPath, onChange }) {
     setToneColor(splits[3] || "");
   }, [themeColorPath]);
 
+  const handleColorModule = (v) => {
+    setColorModule(v);
+    setColorToneKey("");
+    setToneColor("");
+    setColorPaletteKey("");
+    setPaletteColor("");
+  };
+
   const handleToneChange = (v) => {
+    setColorToneKey(v);
+    setToneColor("");
+  };
+  const handlePaletteChange = (v) => {
+    setColorPaletteKey(v);
+    setPaletteColor("");
+  };
+  const handleToneColorChange = (v) => {
     setToneColor(v);
     if (onChange) onChange(`theme.${colorModule}.${colorToneKey}.${v}`);
   };
-  const handlePaletteChange = (v) => {
+  const handlePaletteColorChange = (v) => {
     setPaletteColor(v);
     if (onChange) onChange(`theme.${colorModule}.${colorPaletteKey}.${v}`);
   };
 
   const colorModuleSelect = (
-    <FormControl fullWidth>
-      <InputLabel id="color-module-select-label">Color Module</InputLabel>
-      <Select
-        labelId="color-module-select-label"
-        id="color-module-select"
-        value={colorModule}
-        label="Color Module"
-        onChange={(e) => setColorModule(e.target.value)}
-        displayEmpty
-      >
-        <MenuItem value={"tones"}>Tones</MenuItem>
-        <MenuItem value={"palette"}>Palette</MenuItem>
-      </Select>
-    </FormControl>
+    <ToggleButtonGroup
+      value={colorModule}
+      exclusive
+      onChange={(e, v) => handleColorModule(v)}
+      aria-label="text alignment"
+      size="small"
+    >
+      <Tooltip title="Tones">
+        <ToggleButton value="tones" aria-label="tones">
+          <TonesIcon />
+        </ToggleButton>
+      </Tooltip>
+      <Tooltip title="Palette">
+        <ToggleButton value="palette" aria-label="palette">
+          <PalettesIcon />
+        </ToggleButton>
+      </Tooltip>
+    </ToggleButtonGroup>
   );
 
   const colorToneKeySelect = (
-    <FormControl fullWidth>
+    <FormControl fullWidth size="small">
       <InputLabel id="color-tones-key-select-label">Tone</InputLabel>
       <Select
         labelId="color-tones-key-select-label"
         id="color-tones-key-select"
         value={colorToneKey}
         label="Tone"
-        onChange={(e) => setColorToneKey(e.target.value)}
+        onChange={(e) => handleToneChange(e.target.value)}
         displayEmpty
       >
         {Object.keys(theme.tones).map((p) => (
@@ -82,14 +108,14 @@ function ThemeColorPicker({ colorKey, themeColorPath, onChange }) {
   );
 
   const colorPaletteKeySelect = (
-    <FormControl fullWidth>
+    <FormControl fullWidth size="small">
       <InputLabel id="color-palette-key-select-label">Palette</InputLabel>
       <Select
         labelId="color-palette-key-select-label"
         id="color-palette-key-select"
         value={colorPaletteKey}
         label="Palette"
-        onChange={(e) => setColorPaletteKey(e.target.value)}
+        onChange={(e) => handlePaletteChange(e.target.value)}
         displayEmpty
       >
         {Object.keys(theme.palette)
@@ -104,14 +130,14 @@ function ThemeColorPicker({ colorKey, themeColorPath, onChange }) {
   );
 
   const paletteColorSelect = (
-    <FormControl fullWidth>
+    <FormControl fullWidth size="small">
       <InputLabel id="palette-color-select-label">Color</InputLabel>
       <Select
         labelId="palette-color-select-label"
         id="palette-color-select"
         value={paletteColor}
         label="Color"
-        onChange={(e) => handlePaletteChange(e.target.value)}
+        onChange={(e) => handlePaletteColorChange(e.target.value)}
         displayEmpty
         renderValue={(v) => <Typography>{v}</Typography>}
       >
@@ -127,14 +153,14 @@ function ThemeColorPicker({ colorKey, themeColorPath, onChange }) {
   );
 
   const toneColorSelect = (
-    <FormControl fullWidth>
+    <FormControl fullWidth size="small">
       <InputLabel id="tone-color-select-label">Color</InputLabel>
       <Select
         labelId="tone-color-select-label"
         id="tone-color-select"
         value={toneColor}
         label="Color"
-        onChange={(e) => handleToneChange(e.target.value)}
+        onChange={(e) => handleToneColorChange(e.target.value)}
         displayEmpty
         renderValue={(v) => <Typography>{v}</Typography>}
       >
@@ -148,20 +174,22 @@ function ThemeColorPicker({ colorKey, themeColorPath, onChange }) {
   );
 
   return (
-    <Stack gap={2}>
+    <Stack gap={2} direction={{ xs: "column", lg: "row" }}>
       {colorModuleSelect}
-      {colorModule === "palette" && (
-        <Stack gap={2} direction="row">
-          {colorPaletteKeySelect}
-          {paletteColorSelect}
-        </Stack>
-      )}
-      {colorModule === "tones" && (
-        <Stack gap={2} direction="row">
-          {colorToneKeySelect}
-          {toneColorSelect}
-        </Stack>
-      )}
+      <Box flex={1}>
+        {colorModule === "palette" && (
+          <Stack gap={2} direction="row">
+            {colorPaletteKeySelect}
+            {paletteColorSelect}
+          </Stack>
+        )}
+        {colorModule === "tones" && (
+          <Stack gap={2} direction="row">
+            {colorToneKeySelect}
+            {toneColorSelect}
+          </Stack>
+        )}
+      </Box>
     </Stack>
   );
 }

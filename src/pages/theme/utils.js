@@ -1,5 +1,13 @@
+const SETTING_PIXELS = {
+  type: "pixels",
+  min: 0,
+  max: 300,
+  step: 8,
+};
 const SETTING_SPACING = {
   type: "spacing",
+  min: 0,
+  max: 9,
 };
 const SETTING_COLOR = {
   type: "color",
@@ -39,7 +47,9 @@ export const COMPONENT_SETTINGS = [
     styleOverrides: {
       root: {
         padding: {
-          ...SETTING_SPACING,
+          ...SETTING_PIXELS,
+          max: 30,
+          step: 2,
         },
       },
     },
@@ -62,6 +72,55 @@ export const COMPONENT_SETTINGS = [
           ...SETTING_COLOR,
         },
         color: {
+          ...SETTING_COLOR,
+        },
+      },
+    },
+  },
+  {
+    id: "MuiDrawer",
+    element: "MuiDrawer",
+    title: "Drawer",
+    styleOverrides: {
+      paper: {
+        border: {
+          ...SETTING_SPACING,
+        },
+        background: {
+          ...SETTING_COLOR,
+        },
+        color: {
+          ...SETTING_COLOR,
+        },
+      },
+    },
+  },
+  {
+    id: "MuiPaper",
+    element: "MuiPaper",
+    title: "Paper",
+    defaultProps: {
+      ...SETTING_SPACING,
+    },
+    styleOverrides: {
+      root: {
+        color: {
+          ...SETTING_COLOR,
+        },
+      },
+      rounded: {
+        borderRadius: {
+          ...SETTING_PIXELS,
+        },
+        background: {
+          ...SETTING_COLOR,
+        },
+      },
+      outlined: {
+        borderColor: {
+          ...SETTING_COLOR,
+        },
+        background: {
           ...SETTING_COLOR,
         },
       },

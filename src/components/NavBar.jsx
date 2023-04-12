@@ -53,7 +53,7 @@ const NavBar = ({ onDrawerToggle, window, user, sx }) => {
         position="sticky"
         elevation={trigger ? 2 : 0}
       >
-        <Toolbar sx={{ bgcolor: palette.background.alt }}>
+        <Toolbar>
           <Grid container spacing={1} alignItems="center">
             <Grid item sx={{ display: { md: "none", sm: "block" } }}>
               <IconButton color="inherit" edge="start" onClick={onDrawerToggle}>

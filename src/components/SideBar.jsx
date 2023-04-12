@@ -59,12 +59,7 @@ const SideBar = (props) => {
         position="sticky"
         elevation={trigger ? 2 : open ? 2 : 0}
       >
-        <Toolbar
-          sx={{
-            bgcolor: theme.palette.background.alt,
-            alignItems: "center",
-          }}
-        >
+        <Toolbar sx={{ alignItems: "center" }}>
           <img src={muiLogo} alt="MUI Logo" />
           <Box sx={{ width: 16 }} />
           <Typography

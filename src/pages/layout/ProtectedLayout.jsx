@@ -39,7 +39,6 @@ function ProtectedLayout() {
             PaperProps={{
               style: {
                 width: drawerWidth,
-                backgroundColor: theme.palette.background.alt,
               },
             }}
             variant="temporary"
@@ -52,7 +51,6 @@ function ProtectedLayout() {
           PaperProps={{
             style: {
               width: drawerWidth,
-              backgroundColor: theme.palette.background.alt,
             },
           }}
           sx={{ display: { md: "block", sm: "none", xs: "none" } }}
@@ -66,7 +64,8 @@ function ProtectedLayout() {
           sx={{
             display: "flex",
             flexDirection: "column",
-            minHeight: "91vh",
+            minHeight: "90vh",
+            pb: 10,
           }}
         >
           <Outlet />
