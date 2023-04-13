@@ -7,20 +7,14 @@ import {
 } from "@material/material-color-utilities";
 import { get } from "utils";
 
+// Value will be a string with `<light>|light;dark|<dark>` format
+export const THEME_MODE_VALUE_SEP = "|light;dark|";
+
 export const generateThemeSchemeFromColors = (
   colorBase,
   { secondaryColor, tertiaryColor } = {}
 ) => {
-  // const theme = themeFromSourceColor(argbFromHex(colorBase));
   const theme = themeFromColors(colorBase, { secondaryColor, tertiaryColor });
-
-  /*let theme = undefined;
-      if (typeof colorBase == 'string') {
-          theme = themeFromSourceColor(argbFromHex(colorBase));
-      }
-      else {
-          theme = await themeFromImage(colorBase);
-      }*/
 
   const paletteTones = {};
   const paletteExtras = {};
@@ -118,16 +112,40 @@ export function reverseTokens(tokensDark) {
   return reversedTokens;
 }
 
+// value will be a string with `<light>|light;dark|<dark>` format
+export const parseSplitThemeValue = (value) => {
+  const valueSplits = value?.split(THEME_MODE_VALUE_SEP);
+  const valueLight = valueSplits?.length > 1 ? valueSplits[0] : value;
+  const valueDark = valueSplits?.length > 1 ? valueSplits[1] : value;
+  return { light: valueLight, dark: valueDark };
+};
+
+export const updateModeSplitThemeValue = (value, newValue, mode) => {
+  const themeVal = parseSplitThemeValue(value || newValue);
+  const newThemeVal = { ...themeVal, [mode]: newValue };
+  const newVal =
+    newThemeVal.light === newThemeVal.dark
+      ? newThemeVal.dark
+      : `${newThemeVal.light || ""}${THEME_MODE_VALUE_SEP}${
+          newThemeVal.dark || ""
+        }`;
+  return newVal === THEME_MODE_VALUE_SEP ? undefined : newVal;
+};
+
 export const parseThemeSimple = (jsObj, theme) => {
   return JSON.parse(JSON.stringify(jsObj), (key, value) => {
     if (typeof value === "string") {
-      if (value.startsWith("theme.spacing(")) {
-        return theme.spacing(Number(value.match(/\d(?=\))/)?.[0] ?? "0"));
-      } else if (value.startsWith("theme.")) {
+      const modeValue =
+        parseSplitThemeValue(value)[theme?.palette?.mode || "dark"];
+      // console.log(key, modeValue);
+      if (modeValue.startsWith("theme.spacing(")) {
+        return theme.spacing(Number(modeValue.match(/\d(?=\))/)?.[0] ?? "0"));
+      } else if (modeValue.startsWith("theme.")) {
         // theme values
-        const valStr = value.replace("theme.", "");
+        const valStr = modeValue.replace("theme.", "");
         return get(theme, valStr, "");
       }
+      return modeValue;
     }
     return value;
   });

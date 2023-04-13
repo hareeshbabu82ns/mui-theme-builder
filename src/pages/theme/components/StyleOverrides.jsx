@@ -8,7 +8,11 @@ const StyleOverrides = ({ settingConfig, settingData, onChange }) => {
   const handleStyleChange = (style, attribute, value) => {
     // console.log(style, attribute, value);
     if (onChange)
-      onChange({ styleOverrides: { [style]: { [attribute]: value } } });
+      onChange({
+        styleOverrides: {
+          [style]: { [attribute]: value },
+        },
+      });
   };
 
   return (

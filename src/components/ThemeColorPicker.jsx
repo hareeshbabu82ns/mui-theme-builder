@@ -19,29 +19,24 @@ import PalettesIcon from "@mui/icons-material/PaletteOutlined";
 function ThemeColorPicker({ colorKey, themeColorPath, onChange }) {
   const theme = useTheme();
 
-  const [themePathSplits, setThemePathSplits] = useState(
-    themeColorPath.split(".")
-  );
+  const [colorModule, setColorModule] = useState("");
+  const [colorPaletteKey, setColorPaletteKey] = useState("");
+  const [colorToneKey, setColorToneKey] = useState("");
 
-  const [colorModule, setColorModule] = useState(themePathSplits[1] || "");
-  const [colorPaletteKey, setColorPaletteKey] = useState(
-    themePathSplits[2] || ""
-  );
-  const [colorToneKey, setColorToneKey] = useState(themePathSplits[2] || "");
-
-  const [paletteColor, setPaletteColor] = useState(themePathSplits[3] || "");
-  const [toneColor, setToneColor] = useState(themePathSplits[3] || "");
+  const [paletteColor, setPaletteColor] = useState("");
+  const [toneColor, setToneColor] = useState("");
 
   useEffect(() => {
     const splits = themeColorPath.split(".");
-    setThemePathSplits(splits);
     setColorModule(splits[1] || "");
+    setColorPaletteKey(splits[2] || "");
     setColorToneKey(splits[2] || "");
     setPaletteColor(splits[3] || "");
     setToneColor(splits[3] || "");
   }, [themeColorPath]);
 
   const handleColorModule = (v) => {
+    if (v === null) return;
     setColorModule(v);
     setColorToneKey("");
     setToneColor("");
@@ -74,16 +69,16 @@ function ThemeColorPicker({ colorKey, themeColorPath, onChange }) {
       aria-label="text alignment"
       size="small"
     >
-      <Tooltip title="Tones">
-        <ToggleButton value="tones" aria-label="tones">
+      <ToggleButton value="tones" aria-label="tones">
+        <Tooltip title="Tones">
           <TonesIcon />
-        </ToggleButton>
-      </Tooltip>
-      <Tooltip title="Palette">
-        <ToggleButton value="palette" aria-label="palette">
+        </Tooltip>
+      </ToggleButton>
+      <ToggleButton value="palette" aria-label="palette">
+        <Tooltip title="Palette">
           <PalettesIcon />
-        </ToggleButton>
-      </Tooltip>
+        </Tooltip>
+      </ToggleButton>
     </ToggleButtonGroup>
   );
 

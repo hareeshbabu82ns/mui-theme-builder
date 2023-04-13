@@ -1,6 +1,7 @@
-import { Box, Paper, Slider, Stack } from "@mui/material";
-import { useState } from "react";
+import { Box, Paper, Slider, Stack, useTheme } from "@mui/material";
+import { useEffect, useState } from "react";
 import AttributeTitle from "./AttributeTitle";
+import { parseSplitThemeValue, updateModeSplitThemeValue } from "theme/utils";
 
 const StyleAttributeSpacing = ({
   settingId,
@@ -8,24 +9,33 @@ const StyleAttributeSpacing = ({
   settingData,
   onChange,
 }) => {
-  // const theme = useTheme();
-  const s =
-    typeof settingData === "string"
-      ? settingData?.startsWith("theme.spacing")
-        ? Number(settingData.match(/\d(?=\))/)?.[0] ?? "0")
-        : Number(settingData?.replace("px", ""))
-      : settingData ?? 0;
-  const [space, setSpace] = useState(s);
+  const theme = useTheme();
+
+  const [space, setSpace] = useState(0);
+
+  useEffect(() => {
+    const themeSpace = parseSplitThemeValue(settingData)[theme?.palette?.mode];
+    const s =
+      typeof themeSpace === "string"
+        ? themeSpace?.startsWith("theme.spacing")
+          ? Number(themeSpace.match(/\d(?=\))/)?.[0] ?? "0")
+          : Number(themeSpace?.replace("px", ""))
+        : settingData ?? 0;
+    setSpace(s);
+  }, [settingData, theme]);
+
   const handleSpaceChange = (e, space) => {
     setSpace(space || 0);
-    if (onChange)
+    if (onChange) {
+      const newSpace = space
+        ? settingConfig?.type === "pixels"
+          ? `${space}px`
+          : `theme.spacing(${space})`
+        : space;
       onChange(
-        space
-          ? settingConfig?.type === "pixels"
-            ? `${space}px`
-            : `theme.spacing(${space})`
-          : space
+        updateModeSplitThemeValue(settingData, newSpace, theme?.palette?.mode)
       );
+    }
   };
 
   return (

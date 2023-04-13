@@ -1,9 +1,10 @@
 import { Box, Paper, Stack, useTheme } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { get } from "utils";
 import AttributeTitle from "./AttributeTitle";
 import ThemeColorPicker from "components/ThemeColorPicker";
 import SketchColorPicker from "components/SketchColorPicker";
+import { parseSplitThemeValue, updateModeSplitThemeValue } from "theme/utils";
 
 const StyleAttributeColor = ({
   settingId,
@@ -12,26 +13,39 @@ const StyleAttributeColor = ({
   onChange,
 }) => {
   const theme = useTheme();
-  const c = settingData?.startsWith("theme.")
-    ? get(theme, settingData.replace("theme.", ""))
-    : settingData;
 
-  const [color, setColor] = useState(c);
+  const [color, setColor] = useState("");
 
-  const [colorPath, setColorPath] = useState(
-    settingData?.startsWith("theme.") ? settingData : ""
-  );
+  const [colorPath, setColorPath] = useState("");
+
+  useEffect(() => {
+    const themeColor = parseSplitThemeValue(settingData)[theme?.palette?.mode];
+    const c =
+      typeof themeColor === "string"
+        ? themeColor?.startsWith("theme.")
+          ? get(theme, themeColor.replace("theme.", ""))
+          : themeColor
+        : "";
+    setColor(c);
+    setColorPath(themeColor?.startsWith("theme.") ? themeColor : "");
+  }, [settingData, theme]);
 
   const handleColorChange = (color) => {
     setColor(color);
     setColorPath("");
-    if (onChange) onChange(color);
+    if (onChange)
+      onChange(
+        updateModeSplitThemeValue(settingData, color, theme?.palette?.mode)
+      );
   };
 
   const handleThemeColorChange = (color) => {
     setColor(get(theme, color.replace("theme.", "")));
     setColorPath(color);
-    if (onChange) onChange(color);
+    if (onChange)
+      onChange(
+        updateModeSplitThemeValue(settingData, color, theme?.palette?.mode)
+      );
   };
 
   return (
