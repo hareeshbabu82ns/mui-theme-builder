@@ -7,6 +7,7 @@ import {
   parseThemeSimple,
   reverseTokens,
 } from "./utils";
+import themeTypography from "./typography";
 
 const customTheme = (customization) => {
   const baseColor = customization.baseColor || "#130019";
@@ -17,6 +18,7 @@ const customTheme = (customization) => {
     secondaryColor: customization.secondaryColor,
     tertiaryColor: customization.tertiaryColor,
     customComponents: customization.customComponents,
+    customization,
   });
 
   document
@@ -33,6 +35,7 @@ export const generateCustomTheme = ({
   secondaryColor,
   tertiaryColor,
   customComponents,
+  customization,
 }) => {
   const isDark = mode === "dark";
   const themeScheme = generateThemeSchemeFromColors(baseColor, {
@@ -52,18 +55,22 @@ export const generateCustomTheme = ({
 
   const newM3Theme = createTheme(designTokens);
   const themedComponents = getThemedComponents(newM3Theme);
+  const themedTypography = themeTypography(newM3Theme, customization);
+  const newM3TypoTheme = deepmerge(newM3Theme, {
+    typography: themedTypography,
+  });
   const customThemedComponents = customComponents
     ? deepmerge(themedComponents, {
-        components: parseThemeSimple(customComponents, newM3Theme),
+        components: parseThemeSimple(customComponents, newM3TypoTheme),
       })
     : themedComponents;
-  const theme = deepmerge(newM3Theme, customThemedComponents);
+  const theme = deepmerge(newM3TypoTheme, customThemedComponents);
   // console.log(newM3Theme.components);
 
   return {
     themeScheme,
     theme,
-    designTokens,
+    designTokens: { ...designTokens, typography: themedTypography },
     themedComponents: customThemedComponents,
   };
 };

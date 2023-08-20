@@ -25,7 +25,8 @@ function App() {
         secondaryColor: themeState.secondaryColor,
         tertiaryColor: themeState.tertiaryColor,
         customComponents: themeState.customComponents,
-        fontFamily: "Inter, sans-serif",
+        fontFamily: "'Plus Jakarta Sans', sans-serif",
+        borderRadius: 16,
       }),
     [themeState]
   );

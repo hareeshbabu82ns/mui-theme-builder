@@ -5,6 +5,7 @@ import paletteGen from "./generate-material-palette";
 export const getDesignTokens = ({ mode, scheme, tones, customizations }) => {
   const isDark = mode === "dark";
   return {
+    direction: "ltr",
     palette: {
       mode,
       isDark,
@@ -152,6 +153,7 @@ export const getDesignTokens = ({ mode, scheme, tones, customizations }) => {
         main: scheme.onSurface,
         primary: scheme.onSurface,
         secondary: scheme.onSecondaryContainer,
+        heading: scheme.onSurface,
       },
       divider: scheme.outline,
     },
@@ -176,6 +178,7 @@ export const getThemedComponents = (
           root: {
             borderColor: theme.palette.outline,
             backgroundColor: theme.palette.outline,
+            opacity: 1,
           },
         },
       },
@@ -494,10 +497,6 @@ export const getThemedComponents = (
         styleOverrides: {
           root: {
             backgroundImage: "none",
-            // background:
-            //   theme.palette.mode === "dark"
-            //     ? darken(theme.palette.primary.main, 0.9)
-            //     : lighten(theme.palette.primary.main, 0.9),
             color: theme.palette.onSurface.main,
           },
           rounded: {
@@ -614,7 +613,7 @@ export const getThemedComponents = (
           root: {
             color: "inherit",
             // color: theme.palette.text.primary,
-            minWidth: 32,
+            minWidth: "36px",
             "&.Mui-selected": {
               fontWeight: "bold",
             },

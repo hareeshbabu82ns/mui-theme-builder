@@ -20,12 +20,12 @@ import LightIcon from "@mui/icons-material/LightModeOutlined";
 import { useDispatch } from "react-redux";
 import { toggleMode } from "state/themeSlice";
 
-const NavBar = ({ onDrawerToggle, window, user, sx }) => {
+const NavBar = ( { onDrawerToggle, window, user, sx } ) => {
   const { palette } = useTheme();
   // const location = useLocation();
   const dispatch = useDispatch();
 
-  const changeThemeMode = () => dispatch(toggleMode());
+  const changeThemeMode = () => dispatch( toggleMode() );
 
   // const changeThemeScheme = async () => {
   //   const randaomColors = tinycolor
@@ -40,11 +40,11 @@ const NavBar = ({ onDrawerToggle, window, user, sx }) => {
   //   dispatch(setThemeColors(payload));
   // };
 
-  const trigger = useScrollTrigger({
+  const trigger = useScrollTrigger( {
     disableHysteresis: true,
     threshold: 0,
     target: window ? window() : undefined,
-  });
+  } );
 
   return (
     <>
@@ -105,9 +105,9 @@ const NavBar = ({ onDrawerToggle, window, user, sx }) => {
                     }}
                   >
                     {user.name
-                      .split(" ")
-                      .map((n) => n.substring(0, 1))
-                      .join("")}
+                      .split( " " )
+                      .map( ( n ) => n.substring( 0, 1 ) )
+                      .join( "" )}
                   </Avatar>
                 </IconButton>
               </Tooltip>

@@ -14,6 +14,8 @@ const genTheme = ({
   secondaryColor,
   tertiaryColor,
   customComponents,
+  fontFamily,
+  borderRadius,
 }) => {
   const {
     designTokens: designTokensLight,
@@ -24,6 +26,7 @@ const genTheme = ({
     secondaryColor,
     tertiaryColor,
     customComponents,
+    customization: { fontFamily, borderRadius },
   });
   const {
     designTokens: designTokensDark,
@@ -34,6 +37,7 @@ const genTheme = ({
     secondaryColor,
     tertiaryColor,
     customComponents,
+    customization: { fontFamily, borderRadius },
   });
   return {
     designTokensLight,
@@ -57,6 +61,8 @@ const ThemeCodePage = () => {
         secondaryColor: themeState.secondaryColor,
         tertiaryColor: themeState.tertiaryColor,
         customComponents: themeState.customComponents,
+        fontFamily: "'Plus Jakarta Sans', sans-serif",
+        borderRadius: 16,
       }),
     [themeState]
   );
