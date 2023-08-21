@@ -53,7 +53,7 @@ const Buttons = () => {
           Secondary
         </Button>
         <Button variant="contained" color="tertiary">
-          Teartiary
+          Tertiary
         </Button>
         <Button variant="contained" color="surface">
           Surface
@@ -76,7 +76,7 @@ const Buttons = () => {
           Secondary
         </Button>
         <Button variant="outlined" color="tertiary">
-          Teartiary
+          Tertiary
         </Button>
         <Button variant="outlined" disabled>
           Disabled
@@ -96,7 +96,7 @@ const Buttons = () => {
           Secondary
         </Button>
         <Button variant="text" color="tertiary">
-          Teartiary
+          Tertiary
         </Button>
         <Button variant="text" disabled>
           Disabled

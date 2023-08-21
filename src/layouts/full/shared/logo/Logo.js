@@ -29,7 +29,7 @@ const Logo = () => {
       <ToolbarStyled sx={{ alignItems: "center" }}>
         <img src={muiLogo} alt="MUI Logo" />
         <Box sx={{ width: 16 }} />
-        <Typography variant="h4" color={theme.palette.primary.dark}>
+        <Typography variant="h4" color={theme.palette.tertiary.main}>
           v5 Theme
         </Typography>
       </ToolbarStyled>

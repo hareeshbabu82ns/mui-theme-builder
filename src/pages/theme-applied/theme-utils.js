@@ -1,96 +1,97 @@
 export const designTokensLight = {
+  direction: "ltr",
   palette: {
     mode: "light",
     isDark: false,
     primary: {
-      50: "#53a671",
-      100: "#42a667",
-      200: "#2fa157",
-      300: "#1b9644",
-      400: "#0b8a31",
-      500: "#057d25",
-      600: "#016e1c",
-      700: "#005c15",
-      800: "#004a10",
-      900: "#00380b",
-      main: "#006e20",
+      50: "#8183b8",
+      100: "#696db5",
+      200: "#5057b3",
+      300: "#353fab",
+      400: "#1f2ea1",
+      500: "#132794",
+      600: "#0f2387",
+      700: "#0b1f7a",
+      800: "#0a1d6b",
+      900: "#081a5c",
+      main: "#4755b6",
       contrastText: "#ffffff",
-      A100: "#00ae46",
-      A200: "#00ae43",
-      A400: "#009c34",
-      A700: "#007121",
+      A100: "#1e22be",
+      A200: "#0007c1",
+      A400: "#000fb6",
+      A700: "#001196",
     },
     onPrimary: {
       main: "#ffffff",
-      contrastText: "#006e20",
+      contrastText: "#4755b6",
     },
     primaryContainer: {
-      main: "#70ff7c",
-      contrastText: "#002205",
+      main: "#dfe0ff",
+      contrastText: "#000d5f",
     },
     onPrimaryContainer: {
-      main: "#002205",
-      contrastText: "#70ff7c",
+      main: "#000d5f",
+      contrastText: "#dfe0ff",
     },
     secondary: {
-      50: "#7d8ac9",
-      100: "#6b7bc7",
-      200: "#596cc2",
-      300: "#455cba",
-      400: "#3552b0",
-      500: "#2a4ba3",
-      600: "#234394",
-      700: "#203e85",
-      800: "#1b3875",
-      900: "#173063",
-      main: "#2f55c8",
+      50: "#e3b181",
+      100: "#e3a66d",
+      200: "#db9456",
+      300: "#cf7e3c",
+      400: "#bd6628",
+      500: "#ab531d",
+      600: "#944416",
+      700: "#7d3711",
+      800: "#662c0e",
+      900: "#4d1f0a",
+      main: "#974815",
       contrastText: "#ffffff",
-      A100: "#102bd1",
-      A200: "#0322d2",
-      A400: "#082fc7",
-      A700: "#0f31a4",
+      A100: "#ee7b00",
+      A200: "#ed7600",
+      A400: "#d66000",
+      A700: "#9a4000",
     },
     onSecondary: {
       main: "#ffffff",
-      contrastText: "#2f55c8",
+      contrastText: "#974815",
     },
     secondaryContainer: {
-      main: "#dce1ff",
-      contrastText: "#00164f",
+      main: "#ffdbca",
+      contrastText: "#331100",
     },
     onSecondaryContainer: {
-      main: "#00164f",
-      contrastText: "#dce1ff",
+      main: "#331100",
+      contrastText: "#ffdbca",
     },
     tertiary: {
-      50: "#b05d97",
-      100: "#b04d92",
-      200: "#ab3a8b",
-      300: "#a32682",
-      400: "#99157a",
-      500: "#8f0e75",
-      600: "#82096c",
-      700: "#730761",
-      800: "#660658",
-      900: "#57054c",
-      main: "#af0b8c",
+      50: "#4f999e",
+      100: "#3f989e",
+      200: "#2c9499",
+      300: "#1a8b8f",
+      400: "#0b8585",
+      500: "#057874",
+      600: "#016963",
+      700: "#005751",
+      800: "#004741",
+      900: "#003630",
+      main: "#006a69",
       contrastText: "#ffffff",
-      A100: "#b9007b",
-      A200: "#b9007e",
-      A400: "#ad007f",
-      A700: "#8d006c",
+      A100: "#0096a6",
+      A200: "#0098a5",
+      A400: "#009196",
+      A700: "#006b6b",
     },
     onTertiary: {
       main: "#ffffff",
-      contrastText: "#af0b8c",
+      contrastText: "#006a69",
     },
     tertiaryContainer: {
-      main: "#ffd8ec",
-      contrastText: "#3b002d",
+      main: "#84f4f3",
+      contrastText: "#002020",
     },
     onTertiaryContainer: {
-      main: "#3b002d",
-      contrastText: "#af0b8c",
+      main: "#002020",
+      contrastText: "#006a69",
     },
     error: {
       50: "#ba7e6a",
@@ -123,134 +124,137 @@ export const designTokensLight = {
       contrastText: "#ffdad6",
     },
     background2: {
-      main: "#fcfdf6",
-      contrastText: "#1a1c19",
+      main: "#fffbff",
+      contrastText: "#1b1b1f",
     },
     onBackground: {
-      main: "#1a1c19",
-      contrastText: "#fcfdf6",
+      main: "#1b1b1f",
+      contrastText: "#fffbff",
     },
     surface: {
-      main: "#fcfdf6",
-      contrastText: "#1a1c19",
+      main: "#fffbff",
+      contrastText: "#1b1b1f",
     },
     onSurface: {
-      main: "#1a1c19",
-      contrastText: "#fcfdf6",
+      main: "#1b1b1f",
+      contrastText: "#fffbff",
     },
     surfaceVariant: {
-      main: "#dee5d9",
-      contrastText: "#424940",
+      main: "#e3e1ec",
+      contrastText: "#46464f",
     },
     onSurfaceVariant: {
-      main: "#424940",
-      contrastText: "#dee5d9",
+      main: "#46464f",
+      contrastText: "#e3e1ec",
     },
     inverseSurface: {
-      main: "#2f312d",
-      contrastText: "#f0f1eb",
+      main: "#303034",
+      contrastText: "#f3f0f4",
     },
     inverseOnSurface: {
-      main: "#f0f1eb",
-      contrastText: "#2f312d",
+      main: "#f3f0f4",
+      contrastText: "#303034",
     },
     inversePrimary: {
-      main: "#51e163",
-      contrastText: "#006e20",
+      main: "#bbc3ff",
+      contrastText: "#4755b6",
     },
-    surfaceTint: "#006e20",
-    outline: "#72796f",
+    surfaceTint: "#4755b6",
+    outline: "#777680",
     shadow: "#000000",
     background: {
-      default: "rgb(229, 240, 232)",
-      paper: "rgb(229, 240, 232)",
-      alt: "rgb(178, 211, 188)",
-      tile: "rgb(191, 218, 199)",
+      main: "rgb(245, 245, 255)",
+      default: "rgb(245, 245, 255)",
+      paper: "rgb(242, 242, 255)",
+      alt: "rgb(245, 245, 255)",
+      tile: "rgb(234, 234, 255)",
     },
     common: {
-      white: "#fcfdf6",
-      black: "#1a1c19",
+      white: "#fffbff",
+      black: "#1b1b1f",
     },
     text: {
-      primary: "#1a1c19",
-      secondary: "#00164f",
+      main: "#1b1b1f",
+      primary: "#1b1b1f",
+      secondary: "#331100",
+      heading: "#1b1b1f",
     },
-    divider: "#72796f",
+    divider: "#777680",
   },
   tones: {
     primary: {
       0: "#000000",
-      10: "#002205",
-      20: "#00390c",
-      30: "#005316",
-      40: "#006e20",
-      50: "#008a2a",
-      60: "#00a835",
-      70: "#2ec44a",
-      80: "#51e163",
-      90: "#70ff7c",
-      95: "#c8ffc1",
-      99: "#f6fff0",
+      10: "#000d5f",
+      20: "#102287",
+      30: "#2d3c9d",
+      40: "#4755b6",
+      50: "#606fd1",
+      60: "#7a89ed",
+      70: "#98a5ff",
+      80: "#bbc3ff",
+      90: "#dfe0ff",
+      95: "#f0efff",
+      99: "#fffbff",
       100: "#ffffff",
     },
     secondary: {
       0: "#000000",
-      10: "#00164f",
-      20: "#00277e",
-      30: "#043baf",
-      40: "#2f55c8",
-      50: "#4c6fe2",
-      60: "#678afe",
-      70: "#8fa7ff",
-      80: "#b6c4ff",
-      90: "#dce1ff",
-      95: "#eff0ff",
-      99: "#fefbff",
+      10: "#331100",
+      20: "#542100",
+      30: "#773200",
+      40: "#974815",
+      50: "#b6602c",
+      60: "#d57842",
+      70: "#f5925a",
+      80: "#ffb68f",
+      90: "#ffdbca",
+      95: "#ffede6",
+      99: "#fffbff",
       100: "#ffffff",
     },
     tertiary: {
       0: "#000000",
-      10: "#3b002d",
-      20: "#60004b",
-      30: "#87006b",
-      40: "#af0b8c",
-      50: "#cf33a7",
-      60: "#ef50c3",
-      70: "#ff7dd4",
-      80: "#ffaedf",
-      90: "#ffd8ec",
-      95: "#ffecf4",
-      99: "#fffbff",
+      10: "#002020",
+      20: "#003737",
+      30: "#00504f",
+      40: "#006a69",
+      50: "#008584",
+      60: "#1ba1a0",
+      70: "#45bcbb",
+      80: "#66d8d7",
+      90: "#84f4f3",
+      95: "#aefffd",
+      99: "#f1fffe",
       100: "#ffffff",
     },
     neutral: {
       0: "#000000",
-      10: "#1a1c19",
-      20: "#2f312d",
-      30: "#454743",
-      40: "#5d5f5a",
-      50: "#767873",
-      60: "#90918c",
-      70: "#aaaca6",
-      80: "#c6c7c1",
-      90: "#e2e3dd",
-      95: "#f0f1eb",
-      99: "#fcfdf6",
+      10: "#1b1b1f",
+      20: "#303034",
+      30: "#47464a",
+      40: "#5f5e62",
+      50: "#78767a",
+      60: "#929094",
+      70: "#acaaaf",
+      80: "#c8c5ca",
+      90: "#e4e1e6",
+      95: "#f3f0f4",
+      99: "#fffbff",
       100: "#ffffff",
     },
     neutralVariant: {
       0: "#000000",
-      10: "#171d16",
-      20: "#2c322a",
-      30: "#424940",
-      40: "#5a6057",
-      50: "#72796f",
-      60: "#8c9388",
-      70: "#a7ada2",
-      80: "#c2c9bd",
-      90: "#dee5d9",
-      95: "#ecf3e7",
-      99: "#f8fef2",
+      10: "#1a1b23",
+      20: "#2f3038",
+      30: "#46464f",
+      40: "#5e5e67",
+      50: "#777680",
+      60: "#90909a",
+      70: "#abaab4",
+      80: "#c7c5d0",
+      90: "#e3e1ec",
+      95: "#f1effa",
+      99: "#fffbff",
       100: "#ffffff",
     },
     error: {
@@ -269,100 +273,239 @@ export const designTokensLight = {
       100: "#ffffff",
     },
   },
+  typography: {
+    fontFamily: "'Plus Jakarta Sans', sans-serif",
+    h6: {
+      color: "#1b1b1f",
+      fontWeight: 600,
+      fontSize: "1rem",
+      lineHeight: "1.2rem",
+    },
+    h5: {
+      fontWeight: 600,
+      fontSize: "1.125rem",
+      lineHeight: "1.6rem",
+      color: "#1b1b1f",
+    },
+    h4: {
+      color: "#1b1b1f",
+      fontWeight: 600,
+      fontSize: "1.3125rem",
+      lineHeight: "1.6rem",
+    },
+    h3: {
+      color: "#1b1b1f",
+      fontWeight: 600,
+      fontSize: "1.5rem",
+      lineHeight: "1.75rem",
+      fontFamily: "'Plus Jakarta Sans', sans-serif",
+    },
+    h2: {
+      color: "#1b1b1f",
+      fontWeight: 600,
+      fontSize: "1.875rem",
+      lineHeight: "2.25rem",
+      fontFamily: "'Plus Jakarta Sans', sans-serif",
+    },
+    h1: {
+      color: "#1b1b1f",
+      fontWeight: 600,
+      fontSize: "2.25rem",
+      lineHeight: "2.75rem",
+      fontFamily: "'Plus Jakarta Sans', sans-serif",
+    },
+    subtitle1: {
+      color: "#1b1b1f",
+      fontSize: "0.875rem",
+      fontWeight: 400,
+    },
+    subtitle2: {
+      color: "#331100",
+      fontSize: "0.875rem",
+      fontWeight: 400,
+    },
+    caption: {
+      fontSize: "0.75rem",
+      color: "#331100",
+      fontWeight: 400,
+    },
+    body1: {
+      fontSize: "0.875rem",
+      fontWeight: 400,
+      lineHeight: "1.334em",
+      color: "#1b1b1f",
+    },
+    body2: {
+      letterSpacing: "0em",
+      fontWeight: 400,
+      lineHeight: "1.5em",
+      color: "#331100",
+    },
+    button: {
+      textTransform: "capitalize",
+      color: "#1b1b1f",
+    },
+    customInput: {
+      marginTop: 1,
+      marginBottom: 1,
+      "& > label": {
+        top: 23,
+        left: 0,
+        color: "#9e9e9e",
+        '&[data-shrink="false"]': {
+          top: 5,
+        },
+      },
+      "& > div > input": {
+        padding: "30.5px 14px 11.5px !important",
+      },
+      "& legend": {
+        display: "none",
+      },
+      "& fieldset": {
+        top: 0,
+      },
+    },
+    mainContent: {
+      backgroundColor: "rgb(245, 245, 255)",
+      width: "100%",
+      minHeight: "calc(100vh - 88px)",
+      flexGrow: 1,
+      padding: "20px",
+      marginTop: "88px",
+      marginRight: "20px",
+      borderRadius: "16px",
+    },
+    menuCaption: {
+      fontSize: "0.875rem",
+      fontWeight: 500,
+      color: "#1b1b1f",
+      padding: "6px",
+      textTransform: "capitalize",
+      marginTop: "10px",
+    },
+    subMenuCaption: {
+      fontSize: "0.6875rem",
+      fontWeight: 500,
+      color: "#331100",
+      textTransform: "capitalize",
+    },
+    commonAvatar: {
+      cursor: "pointer",
+      borderRadius: "8px",
+    },
+    smallAvatar: {
+      width: "22px",
+      height: "22px",
+      fontSize: "1rem",
+    },
+    mediumAvatar: {
+      width: "34px",
+      height: "34px",
+      fontSize: "1.2rem",
+    },
+    largeAvatar: {
+      width: "44px",
+      height: "44px",
+      fontSize: "1.5rem",
+    },
+  },
 };
+
 export const designTokensDark = {
+  direction: "ltr",
   palette: {
     mode: "dark",
     isDark: true,
     primary: {
-      50: "#04700a",
-      100: "#127319",
-      200: "#23782a",
-      300: "#398241",
-      400: "#508f58",
-      500: "#629e6c",
-      600: "#71ad7c",
-      700: "#80bf8d",
-      800: "#8cd19b",
-      900: "#9ae3aa",
-      main: "#51e163",
-      contrastText: "#00390c",
-      A100: "#00790d",
-      A200: "#00820f",
-      A400: "#40a250",
-      A700: "#8eeba7",
+      50: "#4d5780",
+      100: "#555d82",
+      200: "#60678a",
+      300: "#727794",
+      400: "#8487a1",
+      500: "#9698b3",
+      600: "#a9abc4",
+      700: "#babcd9",
+      800: "#cccded",
+      900: "#dedfff",
+      main: "#bbc3ff",
+      contrastText: "#102287",
+      A100: "#2a3889",
+      A200: "#424d95",
+      A400: "#898cb6",
+      A700: "#d3d3ff",
     },
     onPrimary: {
-      main: "#00390c",
-      contrastText: "#51e163",
+      main: "#102287",
+      contrastText: "#bbc3ff",
     },
     primaryContainer: {
-      main: "#005316",
-      contrastText: "#70ff7c",
+      main: "#2d3c9d",
+      contrastText: "#dfe0ff",
     },
     onPrimaryContainer: {
-      main: "#70ff7c",
-      contrastText: "#005316",
+      main: "#dfe0ff",
+      contrastText: "#2d3c9d",
     },
     secondary: {
-      50: "#495880",
-      100: "#515e82",
-      200: "#5e698a",
-      300: "#6f7894",
-      400: "#8187a1",
-      500: "#9499b3",
-      600: "#a5aac4",
-      700: "#b8bdd9",
-      800: "#caceed",
-      900: "#dbdfff",
-      main: "#b6c4ff",
-      contrastText: "#00277e",
-      A100: "#223989",
-      A200: "#3f5195",
-      A400: "#848cb6",
-      A700: "#d0d4ff",
+      50: "#80422b",
+      100: "#824c37",
+      200: "#8a5a46",
+      300: "#946c5a",
+      400: "#a18170",
+      500: "#b39684",
+      600: "#c4a895",
+      700: "#d9bca7",
+      800: "#edceb7",
+      900: "#ffdfc7",
+      main: "#ffb68f",
+      contrastText: "#542100",
+      A100: "#892b00",
+      A200: "#953b0f",
+      A400: "#b6876a",
+      A700: "#ffdbb8",
     },
     onSecondary: {
-      main: "#00277e",
-      contrastText: "#b6c4ff",
+      main: "#542100",
+      contrastText: "#ffb68f",
     },
     secondaryContainer: {
-      main: "#043baf",
-      contrastText: "#dce1ff",
+      main: "#773200",
+      contrastText: "#ffdbca",
     },
     onSecondaryContainer: {
-      main: "#dce1ff",
-      contrastText: "#043baf",
+      main: "#ffdbca",
+      contrastText: "#773200",
     },
     tertiary: {
-      50: "#80426c",
-      100: "#824b70",
-      200: "#8a5878",
-      300: "#946a85",
-      400: "#a17d93",
-      500: "#b391a4",
-      600: "#c4a1b4",
-      700: "#d9b4c8",
-      800: "#edc5da",
-      900: "#ffd6eb",
-      main: "#ffaedf",
-      contrastText: "#60004b",
-      A100: "#89155f",
-      A200: "#95336e",
-      A400: "#b67e9e",
-      A700: "#ffcbe4",
+      50: "#166b63",
+      100: "#226e67",
+      200: "#30736e",
+      300: "#437d7a",
+      400: "#568786",
+      500: "#689696",
+      600: "#77a4a6",
+      700: "#86b5b8",
+      800: "#93c6c9",
+      900: "#a0d5d9",
+      main: "#66d8d7",
+      contrastText: "#003737",
+      A100: "#00746d",
+      A200: "#007c77",
+      A400: "#4d9899",
+      A700: "#99d9e2",
     },
     onTertiary: {
-      main: "#60004b",
-      contrastText: "#ffaedf",
+      main: "#003737",
+      contrastText: "#66d8d7",
     },
     tertiaryContainer: {
-      main: "#87006b",
-      contrastText: "#ffd8ec",
+      main: "#00504f",
+      contrastText: "#84f4f3",
     },
     onTertiaryContainer: {
-      main: "#ffd8ec",
-      contrastText: "#ffaedf",
+      main: "#84f4f3",
+      contrastText: "#66d8d7",
     },
     error: {
       50: "#804241",
@@ -395,134 +538,137 @@ export const designTokensDark = {
       contrastText: "#93000a",
     },
     background2: {
-      main: "#1a1c19",
-      contrastText: "#e2e3dd",
+      main: "#1b1b1f",
+      contrastText: "#e4e1e6",
     },
     onBackground: {
-      main: "#e2e3dd",
-      contrastText: "#1a1c19",
+      main: "#e4e1e6",
+      contrastText: "#1b1b1f",
     },
     surface: {
-      main: "#1a1c19",
-      contrastText: "#e2e3dd",
+      main: "#1b1b1f",
+      contrastText: "#e4e1e6",
     },
     onSurface: {
-      main: "#e2e3dd",
-      contrastText: "#1a1c19",
+      main: "#e4e1e6",
+      contrastText: "#1b1b1f",
     },
     surfaceVariant: {
-      main: "#424940",
-      contrastText: "#c2c9bd",
+      main: "#46464f",
+      contrastText: "#c7c5d0",
     },
     onSurfaceVariant: {
-      main: "#c2c9bd",
-      contrastText: "#424940",
+      main: "#c7c5d0",
+      contrastText: "#46464f",
     },
     inverseSurface: {
-      main: "#e2e3dd",
-      contrastText: "#2f312d",
+      main: "#e4e1e6",
+      contrastText: "#303034",
     },
     inverseOnSurface: {
-      main: "#2f312d",
-      contrastText: "#e2e3dd",
+      main: "#303034",
+      contrastText: "#e4e1e6",
     },
     inversePrimary: {
-      main: "#006e20",
-      contrastText: "#51e163",
+      main: "#4755b6",
+      contrastText: "#bbc3ff",
     },
-    surfaceTint: "#51e163",
-    outline: "#8c9388",
+    surfaceTint: "#bbc3ff",
+    outline: "#90909a",
     shadow: "#000000",
     background: {
-      default: "rgb(20, 56, 24)",
-      paper: "rgb(20, 56, 24)",
-      alt: "rgb(32, 90, 39)",
-      tile: "rgb(28, 78, 34)",
+      main: "rgb(11, 15, 39)",
+      default: "rgb(11, 15, 39)",
+      paper: "rgb(11, 15, 39)",
+      alt: "rgb(18, 24, 62)",
+      tile: "rgb(15, 21, 54)",
     },
     common: {
-      white: "#1a1c19",
-      black: "#e2e3dd",
+      white: "#1b1b1f",
+      black: "#e4e1e6",
     },
     text: {
-      primary: "#e2e3dd",
-      secondary: "#dce1ff",
+      main: "#e4e1e6",
+      primary: "#e4e1e6",
+      secondary: "#ffdbca",
+      heading: "#e4e1e6",
     },
-    divider: "#8c9388",
+    divider: "#90909a",
   },
   tones: {
     primary: {
       0: "#ffffff",
-      10: "#f6fff0",
-      20: "#c8ffc1",
-      30: "#70ff7c",
-      40: "#51e163",
-      50: "#2ec44a",
-      60: "#00a835",
-      70: "#008a2a",
-      80: "#006e20",
-      90: "#005316",
-      95: "#00390c",
-      99: "#002205",
+      10: "#fffbff",
+      20: "#f0efff",
+      30: "#dfe0ff",
+      40: "#bbc3ff",
+      50: "#98a5ff",
+      60: "#7a89ed",
+      70: "#606fd1",
+      80: "#4755b6",
+      90: "#2d3c9d",
+      95: "#102287",
+      99: "#000d5f",
       100: "#000000",
     },
     secondary: {
       0: "#ffffff",
-      10: "#fefbff",
-      20: "#eff0ff",
-      30: "#dce1ff",
-      40: "#b6c4ff",
-      50: "#8fa7ff",
-      60: "#678afe",
-      70: "#4c6fe2",
-      80: "#2f55c8",
-      90: "#043baf",
-      95: "#00277e",
-      99: "#00164f",
+      10: "#fffbff",
+      20: "#ffede6",
+      30: "#ffdbca",
+      40: "#ffb68f",
+      50: "#f5925a",
+      60: "#d57842",
+      70: "#b6602c",
+      80: "#974815",
+      90: "#773200",
+      95: "#542100",
+      99: "#331100",
       100: "#000000",
     },
     tertiary: {
       0: "#ffffff",
-      10: "#fffbff",
-      20: "#ffecf4",
-      30: "#ffd8ec",
-      40: "#ffaedf",
-      50: "#ff7dd4",
-      60: "#ef50c3",
-      70: "#cf33a7",
-      80: "#af0b8c",
-      90: "#87006b",
-      95: "#60004b",
-      99: "#3b002d",
+      10: "#f1fffe",
+      20: "#aefffd",
+      30: "#84f4f3",
+      40: "#66d8d7",
+      50: "#45bcbb",
+      60: "#1ba1a0",
+      70: "#008584",
+      80: "#006a69",
+      90: "#00504f",
+      95: "#003737",
+      99: "#002020",
       100: "#000000",
     },
     neutral: {
       0: "#ffffff",
-      10: "#fcfdf6",
-      20: "#f0f1eb",
-      30: "#e2e3dd",
-      40: "#c6c7c1",
-      50: "#aaaca6",
-      60: "#90918c",
-      70: "#767873",
-      80: "#5d5f5a",
-      90: "#454743",
-      95: "#2f312d",
-      99: "#1a1c19",
+      10: "#fffbff",
+      20: "#f3f0f4",
+      30: "#e4e1e6",
+      40: "#c8c5ca",
+      50: "#acaaaf",
+      60: "#929094",
+      70: "#78767a",
+      80: "#5f5e62",
+      90: "#47464a",
+      95: "#303034",
+      99: "#1b1b1f",
       100: "#000000",
     },
     neutralVariant: {
       0: "#ffffff",
-      10: "#f8fef2",
-      20: "#ecf3e7",
-      30: "#dee5d9",
-      40: "#c2c9bd",
-      50: "#a7ada2",
-      60: "#8c9388",
-      70: "#72796f",
-      80: "#5a6057",
-      90: "#424940",
-      95: "#2c322a",
-      99: "#171d16",
+      10: "#fffbff",
+      20: "#f1effa",
+      30: "#e3e1ec",
+      40: "#c7c5d0",
+      50: "#abaab4",
+      60: "#90909a",
+      70: "#777680",
+      80: "#5e5e67",
+      90: "#46464f",
+      95: "#2f3038",
+      99: "#1a1b23",
       100: "#000000",
     },
     error: {
@@ -541,7 +687,145 @@ export const designTokensDark = {
       100: "#000000",
     },
   },
+  typography: {
+    fontFamily: "'Plus Jakarta Sans', sans-serif",
+    h6: {
+      color: "#e4e1e6",
+      fontWeight: 600,
+      fontSize: "1rem",
+      lineHeight: "1.2rem",
+    },
+    h5: {
+      fontWeight: 600,
+      fontSize: "1.125rem",
+      lineHeight: "1.6rem",
+      color: "#e4e1e6",
+    },
+    h4: {
+      color: "#e4e1e6",
+      fontWeight: 600,
+      fontSize: "1.3125rem",
+      lineHeight: "1.6rem",
+    },
+    h3: {
+      color: "#e4e1e6",
+      fontWeight: 600,
+      fontSize: "1.5rem",
+      lineHeight: "1.75rem",
+      fontFamily: "'Plus Jakarta Sans', sans-serif",
+    },
+    h2: {
+      color: "#e4e1e6",
+      fontWeight: 600,
+      fontSize: "1.875rem",
+      lineHeight: "2.25rem",
+      fontFamily: "'Plus Jakarta Sans', sans-serif",
+    },
+    h1: {
+      color: "#e4e1e6",
+      fontWeight: 600,
+      fontSize: "2.25rem",
+      lineHeight: "2.75rem",
+      fontFamily: "'Plus Jakarta Sans', sans-serif",
+    },
+    subtitle1: {
+      color: "#e4e1e6",
+      fontSize: "0.875rem",
+      fontWeight: 400,
+    },
+    subtitle2: {
+      color: "#ffdbca",
+      fontSize: "0.875rem",
+      fontWeight: 400,
+    },
+    caption: {
+      fontSize: "0.75rem",
+      color: "#ffdbca",
+      fontWeight: 400,
+    },
+    body1: {
+      fontSize: "0.875rem",
+      fontWeight: 400,
+      lineHeight: "1.334em",
+      color: "#e4e1e6",
+    },
+    body2: {
+      letterSpacing: "0em",
+      fontWeight: 400,
+      lineHeight: "1.5em",
+      color: "#ffdbca",
+    },
+    button: {
+      textTransform: "capitalize",
+      color: "#e4e1e6",
+    },
+    customInput: {
+      marginTop: 1,
+      marginBottom: 1,
+      "& > label": {
+        top: 23,
+        left: 0,
+        color: "#9e9e9e",
+        '&[data-shrink="false"]': {
+          top: 5,
+        },
+      },
+      "& > div > input": {
+        padding: "30.5px 14px 11.5px !important",
+      },
+      "& legend": {
+        display: "none",
+      },
+      "& fieldset": {
+        top: 0,
+      },
+    },
+    mainContent: {
+      backgroundColor: "rgb(11, 15, 39)",
+      width: "100%",
+      minHeight: "calc(100vh - 88px)",
+      flexGrow: 1,
+      padding: "20px",
+      marginTop: "88px",
+      marginRight: "20px",
+      borderRadius: "16px",
+    },
+    menuCaption: {
+      fontSize: "0.875rem",
+      fontWeight: 500,
+      color: "#e4e1e6",
+      padding: "6px",
+      textTransform: "capitalize",
+      marginTop: "10px",
+    },
+    subMenuCaption: {
+      fontSize: "0.6875rem",
+      fontWeight: 500,
+      color: "#ffdbca",
+      textTransform: "capitalize",
+    },
+    commonAvatar: {
+      cursor: "pointer",
+      borderRadius: "8px",
+    },
+    smallAvatar: {
+      width: "22px",
+      height: "22px",
+      fontSize: "1rem",
+    },
+    mediumAvatar: {
+      width: "34px",
+      height: "34px",
+      fontSize: "1.2rem",
+    },
+    largeAvatar: {
+      width: "44px",
+      height: "44px",
+      fontSize: "1.5rem",
+    },
+  },
 };
+
 export const themedComponentsLight = {
   components: {
     MuiCssBaseline: {
@@ -552,8 +836,9 @@ export const themedComponentsLight = {
     MuiDivider: {
       styleOverrides: {
         root: {
-          borderColor: "#72796f",
-          backgroundColor: "#72796f",
+          borderColor: "#777680",
+          backgroundColor: "#777680",
+          opacity: 1,
         },
       },
     },
@@ -593,20 +878,20 @@ export const themedComponentsLight = {
     MuiAppBar: {
       styleOverrides: {
         root: {
-          background: "#fcfdf6",
-          color: "#1a1c19",
+          background: "#fffbff",
+          color: "#1b1b1f",
           transition:
             "background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
         },
         colorDefault: {
-          background: "#fcfdf6",
-          color: "#1a1c19",
+          background: "#fffbff",
+          color: "#1b1b1f",
           transition:
             "background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
         },
         colorPrimary: {
-          background: "rgb(216, 233, 221)",
-          color: "#1a1c19",
+          background: "rgb(227, 229, 244)",
+          color: "#1b1b1f",
           transition:
             "background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
         },
@@ -620,7 +905,7 @@ export const themedComponentsLight = {
           fontWeight: "bold",
         },
         outlined: {
-          borderColor: "#72796f",
+          borderColor: "#777680",
         },
       },
       variants: [
@@ -631,10 +916,10 @@ export const themedComponentsLight = {
           style: {
             boxShadow:
               "0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)",
-            background: "rgba(0, 110, 32, 0.05)",
-            color: "#006e20",
+            background: "rgba(71, 85, 182, 0.05)",
+            color: "#4755b6",
             "&:hover": {
-              background: "rgba(0, 110, 32, 0.15)",
+              background: "rgba(71, 85, 182, 0.15)",
             },
           },
         },
@@ -643,12 +928,12 @@ export const themedComponentsLight = {
             variant: "filled",
           },
           style: {
-            background: "#006e20",
+            background: "#4755b6",
             color: "#ffffff",
             "&:hover": {
               boxShadow:
                 "0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)",
-              background: "rgba(0, 110, 32, 0.85)",
+              background: "rgba(71, 85, 182, 0.85)",
             },
           },
         },
@@ -657,12 +942,12 @@ export const themedComponentsLight = {
             variant: "tonal",
           },
           style: {
-            background: "#dce1ff",
-            color: "#00164f",
+            background: "#ffdbca",
+            color: "#331100",
             "&:hover": {
               boxShadow:
                 "0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)",
-              background: "rgba(220, 225, 255, 0.8)",
+              background: "rgba(255, 219, 202, 0.8)",
             },
           },
         },
@@ -682,12 +967,12 @@ export const themedComponentsLight = {
           style: {
             boxShadow:
               "0px 3px 3px -2px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 1px 8px 0px rgba(0,0,0,0.12)",
-            background: "#70ff7c",
-            color: "#002205",
+            background: "#dfe0ff",
+            color: "#000d5f",
             "&:hover": {
               boxShadow:
                 "0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)",
-              background: "rgb(103, 234, 114)",
+              background: "rgb(205, 206, 234)",
             },
           },
         },
@@ -699,13 +984,13 @@ export const themedComponentsLight = {
           style: {
             boxShadow:
               "0px 3px 3px -2px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 1px 8px 0px rgba(0,0,0,0.12)",
-            background: "#70ff7c",
-            color: "#002205",
+            background: "#dfe0ff",
+            color: "#000d5f",
             fontWeight: "bold",
             "&:hover": {
               boxShadow:
                 "0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)",
-              background: "rgb(103, 234, 114)",
+              background: "rgb(205, 206, 234)",
             },
           },
         },
@@ -716,12 +1001,12 @@ export const themedComponentsLight = {
           style: {
             boxShadow:
               "0px 3px 3px -2px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 1px 8px 0px rgba(0,0,0,0.12)",
-            background: "#dce1ff",
-            color: "#00164f",
+            background: "#ffdbca",
+            color: "#331100",
             "&:hover": {
               boxShadow:
                 "0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)",
-              background: "rgb(202, 207, 234)",
+              background: "rgb(234, 201, 185)",
             },
           },
         },
@@ -733,13 +1018,13 @@ export const themedComponentsLight = {
           style: {
             boxShadow:
               "0px 3px 3px -2px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 1px 8px 0px rgba(0,0,0,0.12)",
-            background: "#dce1ff",
-            color: "#00164f",
+            background: "#ffdbca",
+            color: "#331100",
             fontWeight: "bold",
             "&:hover": {
               boxShadow:
                 "0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)",
-              background: "rgb(202, 207, 234)",
+              background: "rgb(234, 201, 185)",
             },
           },
         },
@@ -750,12 +1035,12 @@ export const themedComponentsLight = {
           style: {
             boxShadow:
               "0px 3px 3px -2px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 1px 8px 0px rgba(0,0,0,0.12)",
-            background: "#ffd8ec",
-            color: "#3b002d",
+            background: "#84f4f3",
+            color: "#002020",
             "&:hover": {
               boxShadow:
                 "0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)",
-              background: "rgb(234, 198, 217)",
+              background: "rgb(121, 224, 223)",
             },
           },
         },
@@ -767,13 +1052,13 @@ export const themedComponentsLight = {
           style: {
             boxShadow:
               "0px 3px 3px -2px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 1px 8px 0px rgba(0,0,0,0.12)",
-            background: "#ffd8ec",
-            color: "#3b002d",
+            background: "#84f4f3",
+            color: "#002020",
             fontWeight: "bold",
             "&:hover": {
               boxShadow:
                 "0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)",
-              background: "rgb(234, 198, 217)",
+              background: "rgb(121, 224, 223)",
             },
           },
         },
@@ -784,12 +1069,12 @@ export const themedComponentsLight = {
           style: {
             boxShadow:
               "0px 3px 3px -2px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 1px 8px 0px rgba(0,0,0,0.12)",
-            background: "rgba(0, 110, 32, 0.05)",
-            color: "#006e20",
+            background: "rgba(71, 85, 182, 0.05)",
+            color: "#4755b6",
             "&:hover": {
               boxShadow:
                 "0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)",
-              background: "rgba(0, 110, 32, 0.08)",
+              background: "rgba(71, 85, 182, 0.08)",
             },
           },
         },
@@ -801,13 +1086,13 @@ export const themedComponentsLight = {
           style: {
             boxShadow:
               "0px 3px 3px -2px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 1px 8px 0px rgba(0,0,0,0.12)",
-            background: "rgba(0, 110, 32, 0.05)",
-            color: "#006e20",
+            background: "rgba(71, 85, 182, 0.05)",
+            color: "#4755b6",
             fontWeight: "bold",
             "&:hover": {
               boxShadow:
                 "0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)",
-              background: "rgba(0, 110, 32, 0.08)",
+              background: "rgba(71, 85, 182, 0.08)",
             },
           },
         },
@@ -828,13 +1113,13 @@ export const themedComponentsLight = {
           style: {
             boxShadow:
               "0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)",
-            backgroundColor: "rgba(0, 110, 32, 0.05)",
+            backgroundColor: "rgba(71, 85, 182, 0.05)",
             transition:
               "background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
             "&:hover": {
               boxShadow:
                 "0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12)",
-              background: "rgba(0, 110, 32, 0.08)",
+              background: "rgba(71, 85, 182, 0.08)",
             },
           },
         },
@@ -843,13 +1128,13 @@ export const themedComponentsLight = {
             variant: "filled",
           },
           style: {
-            backgroundColor: "#dee5d9",
+            backgroundColor: "#e3e1ec",
             transition:
               "background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
             "&:hover": {
               boxShadow:
                 "0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)",
-              background: "rgba(222, 229, 217, 0.8)",
+              background: "rgba(227, 225, 236, 0.8)",
             },
           },
         },
@@ -858,14 +1143,14 @@ export const themedComponentsLight = {
             variant: "outlined",
           },
           style: {
-            backgroundColor: "#fcfdf6",
-            borderColor: "#72796f",
+            backgroundColor: "#fffbff",
+            borderColor: "#777680",
             transition:
               "background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
             "&:hover": {
               boxShadow:
                 "0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)",
-              background: "rgba(26, 28, 25, 0.05)",
+              background: "rgba(27, 27, 31, 0.05)",
             },
           },
         },
@@ -878,21 +1163,21 @@ export const themedComponentsLight = {
       styleOverrides: {
         root: {
           backgroundImage: "none",
-          color: "#1a1c19",
+          color: "#1b1b1f",
         },
         rounded: {
           borderRadius: "undefinedpx",
         },
         outlined: {
-          borderColor: "#72796f",
-          background: "#fcfdf6",
+          borderColor: "#777680",
+          background: "#fffbff",
         },
       },
     },
     MuiCardHeader: {
       styleOverrides: {
         root: {
-          color: "#1a1c19",
+          color: "#1b1b1f",
           padding: "24px",
         },
         title: {
@@ -919,8 +1204,7 @@ export const themedComponentsLight = {
         root: {},
         paper: {
           border: "0px",
-          background: "#fcfdf6",
-          color: "#1a1c19",
+          color: "#1b1b1f",
         },
       },
     },
@@ -939,32 +1223,32 @@ export const themedComponentsLight = {
     MuiListItemButton: {
       styleOverrides: {
         root: {
-          color: "#1a1c19",
+          color: "#1b1b1f",
           paddingTop: "10px",
           paddingBottom: "10px",
           "&.Mui-selected": {
-            background: "#dce1ff",
-            color: "#00164f",
+            color: "#000d5f",
+            background: "#dfe0ff",
             "&:hover": {
-              color: "#00164f",
-              background: "rgba(220, 225, 255, 0.8)",
+              color: "#000d5f",
+              background: "rgb(178, 179, 204)",
             },
             "& .MuiListItemIcon-root": {
-              color: "#2f55c8",
+              color: "#331100",
             },
             "& > .MuiListItemText-root > .MuiTypography-root": {
               fontWeight: "bold",
             },
           },
           "&:hover": {
-            color: "#ffffff",
-            background: "rgba(47, 85, 200, 0.8)",
+            color: "#000d5f",
+            backgroundColor: "rgb(229, 230, 255)",
             "& .MuiListItemIcon-root": {
-              color: "#00164f",
+              color: "#331100",
             },
           },
           "& .MuiListItemIcon-root": {
-            color: "#2f55c8",
+            color: "#331100",
           },
         },
       },
@@ -973,7 +1257,7 @@ export const themedComponentsLight = {
       styleOverrides: {
         root: {
           color: "inherit",
-          minWidth: 32,
+          minWidth: "36px",
           "&.Mui-selected": {
             fontWeight: "bold",
           },
@@ -990,9 +1274,9 @@ export const themedComponentsLight = {
     MuiInputBase: {
       styleOverrides: {
         input: {
-          color: "#1a1c19",
+          color: "#1b1b1f",
           "&::placeholder": {
-            color: "#2f55c8",
+            color: "#974815",
             fontSize: "0.875rem",
           },
         },
@@ -1003,10 +1287,10 @@ export const themedComponentsLight = {
         root: {
           borderRadius: "undefinedpx",
           "& .MuiOutlinedInput-notchedOutline": {
-            borderColor: "#72796f",
+            borderColor: "#777680",
           },
           "&:hover $notchedOutline": {
-            borderColor: "rgba(114, 121, 111, 0.8)",
+            borderColor: "rgba(119, 118, 128, 0.8)",
           },
           "&.MuiInputBase-multiline": {
             padding: 1,
@@ -1039,19 +1323,19 @@ export const themedComponentsLight = {
           },
         },
         mark: {
-          backgroundColor: "rgb(229, 240, 232)",
+          backgroundColor: "rgb(242, 242, 255)",
           width: "4px",
         },
         valueLabel: {
-          color: "#004a10",
+          color: "#0a1d6b",
         },
       },
     },
     MuiAvatar: {
       styleOverrides: {
         root: {
-          color: "#2fa157",
-          background: "#057d25",
+          color: "#5057b3",
+          background: "#132794",
         },
       },
     },
@@ -1067,8 +1351,8 @@ export const themedComponentsLight = {
     MuiTooltip: {
       styleOverrides: {
         tooltip: {
-          background: "#dce1ff",
-          color: "#00164f",
+          background: "#ffdbca",
+          color: "#331100",
         },
       },
     },
@@ -1076,19 +1360,19 @@ export const themedComponentsLight = {
       styleOverrides: {
         root: {
           "& .MuiToolbar-root > *": {
-            color: "#002205",
+            color: "#000d5f",
           },
         },
         virtualScroller: {
-          background: "#70ff7c",
+          background: "#dfe0ff",
         },
         footerContainer: {
-          color: "#00164f",
-          background: "#dce1ff",
+          color: "#331100",
+          background: "#ffdbca",
         },
         columnHeaders: {
-          color: "#00164f",
-          background: "#dce1ff",
+          color: "#331100",
+          background: "#ffdbca",
         },
       },
     },
@@ -1096,11 +1380,11 @@ export const themedComponentsLight = {
       styleOverrides: {
         root: {
           "&:before": {
-            backgroundColor: "#dee5d9",
+            backgroundColor: "#e3e1ec",
           },
           "&.Mui-disabled": {
-            backgroundColor: "#f0f1eb",
-            color: "#2f312d",
+            backgroundColor: "#f3f0f4",
+            color: "#303034",
           },
         },
       },
@@ -1108,13 +1392,13 @@ export const themedComponentsLight = {
     MuiSnackbarContent: {
       styleOverrides: {
         root: {
-          backgroundColor: "#2f312d",
+          backgroundColor: "#303034",
         },
         message: {
-          color: "#f0f1eb",
+          color: "#f3f0f4",
         },
         action: {
-          color: "#51e163",
+          color: "#bbc3ff",
         },
       },
     },
@@ -1134,7 +1418,7 @@ export const themedComponentsLight = {
               transform: "translateX(16px)",
               margin: 4,
               "& + .MuiSwitch-track": {
-                backgroundColor: "#006e20",
+                backgroundColor: "#4755b6",
                 opacity: 1,
                 border: 0,
               },
@@ -1144,23 +1428,23 @@ export const themedComponentsLight = {
                 height: 18,
               },
               "&.Mui-disabled + .MuiSwitch-track": {
-                backgroundColor: "rgba(26, 28, 25, 0.1)",
+                backgroundColor: "rgba(27, 27, 31, 0.1)",
               },
               "&.Mui-disabled .MuiSwitch-thumb": {
-                color: "rgba(252, 253, 246, 0.8)",
+                color: "rgba(255, 251, 255, 0.8)",
               },
             },
             "&.Mui-focusVisible .MuiSwitch-thumb": {
-              color: "#006e20",
+              color: "#4755b6",
               border: "6px solid #ffffff",
             },
             "&.Mui-disabled .MuiSwitch-thumb": {
-              color: "rgba(26, 28, 25, 0.3)",
+              color: "rgba(27, 27, 31, 0.3)",
             },
           },
           "& .MuiSwitch-thumb": {
             boxSizing: "border-box",
-            color: "#72796f",
+            color: "#777680",
             width: 12,
             height: 12,
             "&:before": {
@@ -1176,8 +1460,8 @@ export const themedComponentsLight = {
           },
           "& .MuiSwitch-track": {
             borderRadius: 13,
-            border: "1px solid #72796f",
-            backgroundColor: "#dee5d9",
+            border: "1px solid #777680",
+            backgroundColor: "#e3e1ec",
             opacity: 1,
             transition:
               "background-color 500ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
@@ -1187,6 +1471,7 @@ export const themedComponentsLight = {
     },
   },
 };
+
 export const themedComponentsDark = {
   components: {
     MuiCssBaseline: {
@@ -1197,8 +1482,9 @@ export const themedComponentsDark = {
     MuiDivider: {
       styleOverrides: {
         root: {
-          borderColor: "#8c9388",
-          backgroundColor: "#8c9388",
+          borderColor: "#90909a",
+          backgroundColor: "#90909a",
+          opacity: 1,
         },
       },
     },
@@ -1238,20 +1524,20 @@ export const themedComponentsDark = {
     MuiAppBar: {
       styleOverrides: {
         root: {
-          background: "#1a1c19",
-          color: "#e2e3dd",
+          background: "#1b1b1f",
+          color: "#e4e1e6",
           transition:
             "background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
         },
         colorDefault: {
-          background: "#1a1c19",
-          color: "#e2e3dd",
+          background: "#1b1b1f",
+          color: "#e4e1e6",
           transition:
             "background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
         },
         colorPrimary: {
-          background: "rgb(16, 44, 19)",
-          color: "#e2e3dd",
+          background: "rgb(37, 38, 50)",
+          color: "#e4e1e6",
           transition:
             "background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
         },
@@ -1265,7 +1551,7 @@ export const themedComponentsDark = {
           fontWeight: "bold",
         },
         outlined: {
-          borderColor: "#8c9388",
+          borderColor: "#90909a",
         },
       },
       variants: [
@@ -1276,10 +1562,10 @@ export const themedComponentsDark = {
           style: {
             boxShadow:
               "0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)",
-            background: "rgba(81, 225, 99, 0.05)",
-            color: "#51e163",
+            background: "rgba(187, 195, 255, 0.05)",
+            color: "#bbc3ff",
             "&:hover": {
-              background: "rgba(81, 225, 99, 0.15)",
+              background: "rgba(187, 195, 255, 0.15)",
             },
           },
         },
@@ -1288,12 +1574,12 @@ export const themedComponentsDark = {
             variant: "filled",
           },
           style: {
-            background: "#51e163",
-            color: "#00390c",
+            background: "#bbc3ff",
+            color: "#102287",
             "&:hover": {
               boxShadow:
                 "0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)",
-              background: "rgba(81, 225, 99, 0.85)",
+              background: "rgba(187, 195, 255, 0.85)",
             },
           },
         },
@@ -1302,12 +1588,12 @@ export const themedComponentsDark = {
             variant: "tonal",
           },
           style: {
-            background: "#043baf",
-            color: "#dce1ff",
+            background: "#773200",
+            color: "#ffdbca",
             "&:hover": {
               boxShadow:
                 "0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)",
-              background: "rgba(4, 59, 175, 0.8)",
+              background: "rgba(119, 50, 0, 0.8)",
             },
           },
         },
@@ -1327,12 +1613,12 @@ export const themedComponentsDark = {
           style: {
             boxShadow:
               "0px 3px 3px -2px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 1px 8px 0px rgba(0,0,0,0.12)",
-            background: "#005316",
-            color: "#70ff7c",
+            background: "#2d3c9d",
+            color: "#dfe0ff",
             "&:hover": {
               boxShadow:
                 "0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)",
-              background: "rgb(20, 96, 40)",
+              background: "rgb(61, 75, 164)",
             },
           },
         },
@@ -1344,13 +1630,13 @@ export const themedComponentsDark = {
           style: {
             boxShadow:
               "0px 3px 3px -2px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 1px 8px 0px rgba(0,0,0,0.12)",
-            background: "#005316",
-            color: "#70ff7c",
+            background: "#2d3c9d",
+            color: "#dfe0ff",
             fontWeight: "bold",
             "&:hover": {
               boxShadow:
                 "0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)",
-              background: "rgb(20, 96, 40)",
+              background: "rgb(61, 75, 164)",
             },
           },
         },
@@ -1361,12 +1647,12 @@ export const themedComponentsDark = {
           style: {
             boxShadow:
               "0px 3px 3px -2px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 1px 8px 0px rgba(0,0,0,0.12)",
-            background: "#043baf",
-            color: "#dce1ff",
+            background: "#773200",
+            color: "#ffdbca",
             "&:hover": {
               boxShadow:
                 "0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)",
-              background: "rgb(24, 74, 181)",
+              background: "rgb(129, 66, 20)",
             },
           },
         },
@@ -1378,13 +1664,13 @@ export const themedComponentsDark = {
           style: {
             boxShadow:
               "0px 3px 3px -2px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 1px 8px 0px rgba(0,0,0,0.12)",
-            background: "#043baf",
-            color: "#dce1ff",
+            background: "#773200",
+            color: "#ffdbca",
             fontWeight: "bold",
             "&:hover": {
               boxShadow:
                 "0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)",
-              background: "rgb(24, 74, 181)",
+              background: "rgb(129, 66, 20)",
             },
           },
         },
@@ -1395,12 +1681,12 @@ export const themedComponentsDark = {
           style: {
             boxShadow:
               "0px 3px 3px -2px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 1px 8px 0px rgba(0,0,0,0.12)",
-            background: "#87006b",
-            color: "#ffd8ec",
+            background: "#00504f",
+            color: "#84f4f3",
             "&:hover": {
               boxShadow:
                 "0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)",
-              background: "rgb(144, 20, 118)",
+              background: "rgb(20, 94, 93)",
             },
           },
         },
@@ -1412,13 +1698,13 @@ export const themedComponentsDark = {
           style: {
             boxShadow:
               "0px 3px 3px -2px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 1px 8px 0px rgba(0,0,0,0.12)",
-            background: "#87006b",
-            color: "#ffd8ec",
+            background: "#00504f",
+            color: "#84f4f3",
             fontWeight: "bold",
             "&:hover": {
               boxShadow:
                 "0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)",
-              background: "rgb(144, 20, 118)",
+              background: "rgb(20, 94, 93)",
             },
           },
         },
@@ -1429,12 +1715,12 @@ export const themedComponentsDark = {
           style: {
             boxShadow:
               "0px 3px 3px -2px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 1px 8px 0px rgba(0,0,0,0.12)",
-            background: "rgba(81, 225, 99, 0.05)",
-            color: "#51e163",
+            background: "rgba(187, 195, 255, 0.05)",
+            color: "#bbc3ff",
             "&:hover": {
               boxShadow:
                 "0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)",
-              background: "rgba(81, 225, 99, 0.08)",
+              background: "rgba(187, 195, 255, 0.08)",
             },
           },
         },
@@ -1446,13 +1732,13 @@ export const themedComponentsDark = {
           style: {
             boxShadow:
               "0px 3px 3px -2px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 1px 8px 0px rgba(0,0,0,0.12)",
-            background: "rgba(81, 225, 99, 0.05)",
-            color: "#51e163",
+            background: "rgba(187, 195, 255, 0.05)",
+            color: "#bbc3ff",
             fontWeight: "bold",
             "&:hover": {
               boxShadow:
                 "0px 2px 4px -1px rgba(0,0,0,0.2),0px 4px 5px 0px rgba(0,0,0,0.14),0px 1px 10px 0px rgba(0,0,0,0.12)",
-              background: "rgba(81, 225, 99, 0.08)",
+              background: "rgba(187, 195, 255, 0.08)",
             },
           },
         },
@@ -1473,13 +1759,13 @@ export const themedComponentsDark = {
           style: {
             boxShadow:
               "0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)",
-            backgroundColor: "rgba(81, 225, 99, 0.05)",
+            backgroundColor: "rgba(187, 195, 255, 0.05)",
             transition:
               "background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
             "&:hover": {
               boxShadow:
                 "0px 3px 1px -2px rgba(0,0,0,0.2),0px 2px 2px 0px rgba(0,0,0,0.14),0px 1px 5px 0px rgba(0,0,0,0.12)",
-              background: "rgba(81, 225, 99, 0.08)",
+              background: "rgba(187, 195, 255, 0.08)",
             },
           },
         },
@@ -1488,13 +1774,13 @@ export const themedComponentsDark = {
             variant: "filled",
           },
           style: {
-            backgroundColor: "#424940",
+            backgroundColor: "#46464f",
             transition:
               "background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
             "&:hover": {
               boxShadow:
                 "0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)",
-              background: "rgba(66, 73, 64, 0.8)",
+              background: "rgba(70, 70, 79, 0.8)",
             },
           },
         },
@@ -1503,14 +1789,14 @@ export const themedComponentsDark = {
             variant: "outlined",
           },
           style: {
-            backgroundColor: "#1a1c19",
-            borderColor: "#8c9388",
+            backgroundColor: "#1b1b1f",
+            borderColor: "#90909a",
             transition:
               "background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
             "&:hover": {
               boxShadow:
                 "0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12)",
-              background: "rgba(226, 227, 221, 0.05)",
+              background: "rgba(228, 225, 230, 0.05)",
             },
           },
         },
@@ -1523,21 +1809,21 @@ export const themedComponentsDark = {
       styleOverrides: {
         root: {
           backgroundImage: "none",
-          color: "#e2e3dd",
+          color: "#e4e1e6",
         },
         rounded: {
           borderRadius: "undefinedpx",
         },
         outlined: {
-          borderColor: "#8c9388",
-          background: "#1a1c19",
+          borderColor: "#90909a",
+          background: "#1b1b1f",
         },
       },
     },
     MuiCardHeader: {
       styleOverrides: {
         root: {
-          color: "#e2e3dd",
+          color: "#e4e1e6",
           padding: "24px",
         },
         title: {
@@ -1564,8 +1850,7 @@ export const themedComponentsDark = {
         root: {},
         paper: {
           border: "0px",
-          background: "#1a1c19",
-          color: "#e2e3dd",
+          color: "#e4e1e6",
         },
       },
     },
@@ -1584,32 +1869,32 @@ export const themedComponentsDark = {
     MuiListItemButton: {
       styleOverrides: {
         root: {
-          color: "#e2e3dd",
+          color: "#e4e1e6",
           paddingTop: "10px",
           paddingBottom: "10px",
           "&.Mui-selected": {
-            background: "#043baf",
-            color: "#dce1ff",
+            color: "#dfe0ff",
+            background: "#2d3c9d",
             "&:hover": {
-              color: "#dce1ff",
-              background: "rgba(4, 59, 175, 0.8)",
+              color: "#dfe0ff",
+              background: "rgb(36, 48, 125)",
             },
             "& .MuiListItemIcon-root": {
-              color: "#b6c4ff",
+              color: "#ffdbca",
             },
             "& > .MuiListItemText-root > .MuiTypography-root": {
               fontWeight: "bold",
             },
           },
           "&:hover": {
-            color: "#00277e",
-            background: "rgba(182, 196, 255, 0.8)",
+            color: "#dfe0ff",
+            backgroundColor: "rgb(87, 99, 176)",
             "& .MuiListItemIcon-root": {
-              color: "#dce1ff",
+              color: "#ffdbca",
             },
           },
           "& .MuiListItemIcon-root": {
-            color: "#b6c4ff",
+            color: "#ffdbca",
           },
         },
       },
@@ -1618,7 +1903,7 @@ export const themedComponentsDark = {
       styleOverrides: {
         root: {
           color: "inherit",
-          minWidth: 32,
+          minWidth: "36px",
           "&.Mui-selected": {
             fontWeight: "bold",
           },
@@ -1635,9 +1920,9 @@ export const themedComponentsDark = {
     MuiInputBase: {
       styleOverrides: {
         input: {
-          color: "#e2e3dd",
+          color: "#e4e1e6",
           "&::placeholder": {
-            color: "#b6c4ff",
+            color: "#ffb68f",
             fontSize: "0.875rem",
           },
         },
@@ -1648,10 +1933,10 @@ export const themedComponentsDark = {
         root: {
           borderRadius: "undefinedpx",
           "& .MuiOutlinedInput-notchedOutline": {
-            borderColor: "#8c9388",
+            borderColor: "#90909a",
           },
           "&:hover $notchedOutline": {
-            borderColor: "rgba(140, 147, 136, 0.8)",
+            borderColor: "rgba(144, 144, 154, 0.8)",
           },
           "&.MuiInputBase-multiline": {
             padding: 1,
@@ -1684,19 +1969,19 @@ export const themedComponentsDark = {
           },
         },
         mark: {
-          backgroundColor: "rgb(20, 56, 24)",
+          backgroundColor: "rgb(11, 15, 39)",
           width: "4px",
         },
         valueLabel: {
-          color: "#8cd19b",
+          color: "#cccded",
         },
       },
     },
     MuiAvatar: {
       styleOverrides: {
         root: {
-          color: "#23782a",
-          background: "#629e6c",
+          color: "#60678a",
+          background: "#9698b3",
         },
       },
     },
@@ -1712,8 +1997,8 @@ export const themedComponentsDark = {
     MuiTooltip: {
       styleOverrides: {
         tooltip: {
-          background: "#043baf",
-          color: "#dce1ff",
+          background: "#773200",
+          color: "#ffdbca",
         },
       },
     },
@@ -1721,19 +2006,19 @@ export const themedComponentsDark = {
       styleOverrides: {
         root: {
           "& .MuiToolbar-root > *": {
-            color: "#70ff7c",
+            color: "#dfe0ff",
           },
         },
         virtualScroller: {
-          background: "#005316",
+          background: "#2d3c9d",
         },
         footerContainer: {
-          color: "#dce1ff",
-          background: "#043baf",
+          color: "#ffdbca",
+          background: "#773200",
         },
         columnHeaders: {
-          color: "#dce1ff",
-          background: "#043baf",
+          color: "#ffdbca",
+          background: "#773200",
         },
       },
     },
@@ -1741,11 +2026,11 @@ export const themedComponentsDark = {
       styleOverrides: {
         root: {
           "&:before": {
-            backgroundColor: "#424940",
+            backgroundColor: "#46464f",
           },
           "&.Mui-disabled": {
-            backgroundColor: "#2f312d",
-            color: "#e2e3dd",
+            backgroundColor: "#303034",
+            color: "#e4e1e6",
           },
         },
       },
@@ -1753,13 +2038,13 @@ export const themedComponentsDark = {
     MuiSnackbarContent: {
       styleOverrides: {
         root: {
-          backgroundColor: "#e2e3dd",
+          backgroundColor: "#e4e1e6",
         },
         message: {
-          color: "#2f312d",
+          color: "#303034",
         },
         action: {
-          color: "#006e20",
+          color: "#4755b6",
         },
       },
     },
@@ -1779,33 +2064,33 @@ export const themedComponentsDark = {
               transform: "translateX(16px)",
               margin: 4,
               "& + .MuiSwitch-track": {
-                backgroundColor: "#51e163",
+                backgroundColor: "#bbc3ff",
                 opacity: 1,
                 border: 0,
               },
               "& .MuiSwitch-thumb": {
-                color: "#00390c",
+                color: "#102287",
                 width: 18,
                 height: 18,
               },
               "&.Mui-disabled + .MuiSwitch-track": {
-                backgroundColor: "rgba(226, 227, 221, 0.1)",
+                backgroundColor: "rgba(228, 225, 230, 0.1)",
               },
               "&.Mui-disabled .MuiSwitch-thumb": {
-                color: "rgba(26, 28, 25, 0.8)",
+                color: "rgba(27, 27, 31, 0.8)",
               },
             },
             "&.Mui-focusVisible .MuiSwitch-thumb": {
-              color: "#51e163",
-              border: "6px solid #00390c",
+              color: "#bbc3ff",
+              border: "6px solid #102287",
             },
             "&.Mui-disabled .MuiSwitch-thumb": {
-              color: "rgba(226, 227, 221, 0.3)",
+              color: "rgba(228, 225, 230, 0.3)",
             },
           },
           "& .MuiSwitch-thumb": {
             boxSizing: "border-box",
-            color: "#8c9388",
+            color: "#90909a",
             width: 12,
             height: 12,
             "&:before": {
@@ -1821,8 +2106,8 @@ export const themedComponentsDark = {
           },
           "& .MuiSwitch-track": {
             borderRadius: 13,
-            border: "1px solid #8c9388",
-            backgroundColor: "#424940",
+            border: "1px solid #90909a",
+            backgroundColor: "#46464f",
             opacity: 1,
             transition:
               "background-color 500ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",

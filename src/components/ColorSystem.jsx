@@ -23,7 +23,7 @@ const ColorSystem = () => {
 
 const PaletteColorTones = () => {
   const theme = useTheme();
-  if (!theme.tones) return null;
+  if ( !theme.tones ) return null;
   return (
     <Box
       backgroundColor={theme.palette.background.tile}
@@ -33,35 +33,35 @@ const PaletteColorTones = () => {
       <Typography variant="h4" marginBottom={2}>
         Color Tones
       </Typography>
-      {Object.entries(theme.tones).map(([k, v]) => {
+      {Object.entries( theme.tones ).map( ( [ k, v ] ) => {
         return (
           <Box key={k}>
             <Typography variant="h5" marginBottom={2}>
               {k}
             </Typography>
             <Grid container columns={13} marginBottom={2}>
-              {Object.entries(v).map(([k1, v1]) => {
+              {Object.entries( v ).map( ( [ k1, v1 ] ) => {
                 return (
                   <Grid item xs={6} md={3} xl={1} key={k1}>
                     <ColorBox
                       title={k1}
                       path={`theme.tones.${k}.${k1}`}
                       color={v1}
-                      onColor={theme.palette.getContrastText(v1)}
+                      onColor={theme.palette.getContrastText( v1 )}
                     />
                   </Grid>
                 );
-              })}
+              } )}
             </Grid>
           </Box>
         );
-      })}
+      } )}
     </Box>
   );
 };
 const PaletteColorVariations = () => {
   const theme = useTheme();
-  if (!theme.tones) return null;
+  if ( !theme.tones ) return null;
   return (
     <Box
       backgroundColor={theme.palette.background.tile}
@@ -71,30 +71,30 @@ const PaletteColorVariations = () => {
       <Typography variant="h4" marginBottom={2}>
         Color Palettes
       </Typography>
-      {Object.keys(theme.tones).map((k) => {
-        if (!theme.palette[k]) return null;
+      {Object.keys( theme.tones ).map( ( k ) => {
+        if ( !theme.palette[ k ] ) return null;
         return (
           <Box key={`p-${k}`}>
             <Typography variant="h5" marginBottom={2}>
               {k}
             </Typography>
             <Grid container columns={18} marginBottom={2}>
-              {Object.entries(theme.palette[k] || []).map(([k1, v1]) => {
+              {Object.entries( theme.palette[ k ] || [] ).map( ( [ k1, v1 ] ) => {
                 return (
                   <Grid item xs={9} md={4} xl={2} xxl={1} key={`p-${k1}`}>
                     <ColorBox
                       title={k1}
                       path={`theme.palette.${k}.${k1}`}
                       color={v1}
-                      onColor={theme.palette.getContrastText(v1)}
+                      onColor={theme.palette.getContrastText( v1 )}
                     />
                   </Grid>
                 );
-              })}
+              } )}
             </Grid>
           </Box>
         );
-      })}
+      } )}
       {/* print rest of palettes */}
       <PrintPaletteColorVariations
         palette={theme.palette.background}
@@ -130,24 +130,24 @@ const PaletteColorVariations = () => {
   );
 };
 
-const PrintPaletteColorVariations = ({ palette, title, getContrastText }) => {
+const PrintPaletteColorVariations = ( { palette, title, getContrastText } ) => {
   // return <pre>{JSON.stringify(palette)}</pre>;
   return (
     <Box key={`p-${title}`}>
       <Typography variant="h5">{title}</Typography>
       <Grid container columns={18} marginBottom={2}>
-        {Object.entries(palette || []).map(([k1, v1]) => {
+        {Object.entries( palette || [] ).map( ( [ k1, v1 ] ) => {
           return (
             <Grid item xs={9} md={6} xl={2} key={`p-${k1}`}>
               <ColorBox
                 title={k1}
                 path={`theme.palette.${title}.${k1}`}
                 color={v1}
-                onColor={getContrastText(v1)}
+                onColor={getContrastText( v1 )}
               />
             </Grid>
           );
-        })}
+        } )}
       </Grid>
     </Box>
   );
@@ -390,27 +390,27 @@ const PaletteMainColors = () => {
   );
 };
 
-const ColorBox = ({
+const ColorBox = ( {
   title,
   path,
   color,
   onColor,
   displayColorSpace = "hsl", // none, hsl, hsv, rgb
-}) => {
-  const tinyColor = tinycolor(color);
+} ) => {
+  const tinyColor = tinycolor( color );
   const colorStr = (
     displayColorSpace === "none"
       ? ""
       : displayColorSpace === "hsl"
-      ? tinyColor.toHslString()
-      : displayColorSpace === "rgb"
-      ? tinyColor.toRgbString()
-      : tinyColor.toHsvString()
-  ).replaceAll("%", "");
+        ? tinyColor.toHslString()
+        : displayColorSpace === "rgb"
+          ? tinyColor.toRgbString()
+          : tinyColor.toHsvString()
+  ).replaceAll( "%", "" );
   const clipText = `${path || title}\n${color}\n${colorStr}`;
 
   const handleOnClick = () => {
-    navigator.clipboard.writeText(clipText);
+    navigator.clipboard.writeText( clipText );
     const infoContent = (
       <ListItem>
         <ListItemText
@@ -421,11 +421,11 @@ const ColorBox = ({
     );
 
     // toast.dismiss("col-key");
-    toast.info(infoContent, {
+    toast.info( infoContent, {
       toastId: "col-key",
       autoClose: true,
       closeOnClick: true,
-    });
+    } );
   };
 
   return (
@@ -443,9 +443,9 @@ const ColorBox = ({
       }}
       onClick={handleOnClick}
     >
-      <Typography variant="subtitle2">{title}</Typography>
-      <Typography variant="subtitle2">{color}</Typography>
-      <Typography variant="subtitle2">{colorStr}</Typography>
+      <Typography variant="subtitle2" color={onColor}>{title}</Typography>
+      <Typography variant="subtitle2" color={onColor}>{color}</Typography>
+      <Typography variant="subtitle2" color={onColor}>{colorStr}</Typography>
     </Box>
   );
 };
