@@ -130,20 +130,20 @@ export const getDesignTokens = ({ mode, scheme, tones, customizations }) => {
 
       background: {
         main: isDark
-          ? darken(scheme.primary, 0.75)
-          : lighten(scheme.primary, 0.9),
+          ? darken(scheme.primaryContainer, 0.75)
+          : lighten(scheme.primaryContainer, 0.7),
         default: isDark
-          ? darken(scheme.primary, 0.75)
-          : lighten(scheme.primary, 0.9),
+          ? darken(scheme.primaryContainer, 0.75)
+          : lighten(scheme.primaryContainer, 0.7),
         paper: isDark
-          ? darken(scheme.primary, 0.75)
-          : lighten(scheme.primary, 0.9),
+          ? darken(scheme.primaryContainer, 0.75)
+          : lighten(scheme.primaryContainer, 0.6),
         alt: isDark
-          ? darken(scheme.primary, 0.6)
-          : lighten(scheme.primary, 0.7),
+          ? darken(scheme.primaryContainer, 0.6)
+          : lighten(scheme.primaryContainer, 0.7),
         tile: isDark
-          ? darken(scheme.primary, 0.65)
-          : lighten(scheme.primary, 0.75),
+          ? darken(scheme.primaryContainer, 0.65)
+          : lighten(scheme.primaryContainer, 0.35),
       },
       common: {
         white: scheme.background,
@@ -536,14 +536,12 @@ export const getThemedComponents = (
       MuiDrawer: {
         styleOverrides: {
           root: {
-            //background: theme.palette.surface.main,
+            // background: theme.palette.surface.main,
             //color: theme.palette.onSurface.main,
           },
           paper: {
             border: "0px",
-            //background: theme.palette.mode == 'light' ? lighten(theme.palette.primary.main, 0.85) : darken(theme.palette.primary.main, 0.8),
-            //color: theme.palette.surface.contrastText,
-            background: theme.palette.surface.main,
+            // background: theme.palette.surface.main,
             color: theme.palette.onSurface.main,
           },
         },
@@ -560,20 +558,6 @@ export const getThemedComponents = (
           },
         },
       },
-      // MuiListItemButton: {
-      //   styleOverrides: {
-      //     root: {
-      //       borderRadius: customizations?.radius || 10,
-      //       "&.Mui-selected": {
-      //         color: theme.palette.onSecondaryContainer.main,
-      //         background: theme.palette.secondaryContainer.main,
-      //         "& > .MuiListItemText-root > .MuiTypography-root": {
-      //           fontWeight: "bold",
-      //         },
-      //       },
-      //     },
-      //   },
-      // },
       MuiListItemButton: {
         styleOverrides: {
           root: {
@@ -582,28 +566,31 @@ export const getThemedComponents = (
             paddingTop: "10px",
             paddingBottom: "10px",
             "&.Mui-selected": {
-              background: theme.palette.secondaryContainer.main,
-              color: theme.palette.onSecondaryContainer.main,
+              color: theme.palette.onPrimaryContainer.main,
+              background: theme.palette.primaryContainer.main,
               "&:hover": {
-                color: theme.palette.onSecondaryContainer.main,
-                background: alpha(theme.palette.secondaryContainer.main, 0.8),
+                color: theme.palette.onPrimaryContainer.main,
+                background: darken(theme.palette.primaryContainer.main, 0.2),
               },
               "& .MuiListItemIcon-root": {
-                color: theme.palette.secondary.main,
+                color: theme.palette.onSecondaryContainer.main,
               },
               "& > .MuiListItemText-root > .MuiTypography-root": {
                 fontWeight: "bold",
               },
             },
             "&:hover": {
-              color: theme.palette.onSecondary.main,
-              background: alpha(theme.palette.secondary.main, 0.8),
+              color: theme.palette.onPrimaryContainer.main,
+              backgroundColor: lighten(
+                theme.palette.primaryContainer.main,
+                0.2
+              ),
               "& .MuiListItemIcon-root": {
                 color: theme.palette.onSecondaryContainer.main,
               },
             },
             "& .MuiListItemIcon-root": {
-              color: theme.palette.secondary.main,
+              color: theme.palette.onSecondaryContainer.main,
             },
           },
         },

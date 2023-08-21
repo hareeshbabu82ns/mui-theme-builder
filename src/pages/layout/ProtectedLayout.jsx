@@ -1,78 +1,22 @@
-import NavBar from "components/NavBar";
-import SideBar from "components/SideBar";
+import FullLayout from "layouts/full/FullLayout";
 
-const { Box, useMediaQuery, useTheme } = require("@mui/material");
-const { useState } = require("react");
-const { useSelector } = require("react-redux");
-const { Outlet, Navigate, useLocation } = require("react-router-dom");
+const { useSelector } = require( "react-redux" );
+const { Navigate, useLocation } = require( "react-router-dom" );
 
-const drawerWidth = "300px";
 
-function ProtectedLayout() {
-  const theme = useTheme();
-  const isSmUp = useMediaQuery(theme.breakpoints.up("md"));
-  const [mobileOpen, setMobileOpen] = useState(false);
-
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
-  };
-
+export const ProtectedLayout = () => {
+  const user = useSelector( ( state ) => state.global.user );
+  // const { status, data } = useGetUserQuery(user?._id);
   const location = useLocation();
 
-  const user = useSelector((state) => state.global.user);
+  // console.log('api user: ', data);
 
-  // const { data } = useGetUserQuery(user?._id);
-  const data = user;
-  if (!user) {
-    return <Navigate to={`/signin?from=${location.pathname}`} />;
+  if ( !user ) {
+    // user is not authenticated
+    return <Navigate to={`/auth/login?from=${location.pathname}`} />;
   }
 
-  return (
-    <Box sx={{ display: "flex", minHeight: "cal(100vh-3px)" }}>
-      <Box
-        component="nav"
-        sx={{ width: { md: drawerWidth }, flexShrink: { md: 0 } }}
-      >
-        {isSmUp ? null : (
-          <SideBar
-            user={data || {}}
-            PaperProps={{
-              style: {
-                width: drawerWidth,
-              },
-            }}
-            variant="temporary"
-            open={mobileOpen}
-            onClose={handleDrawerToggle}
-          />
-        )}
-        <SideBar
-          user={data || {}}
-          PaperProps={{
-            style: {
-              width: drawerWidth,
-            },
-          }}
-          sx={{ display: { md: "block", sm: "none", xs: "none" } }}
-        />
-      </Box>
-
-      <Box sx={{ flex: 1, display: "flex", flexDirection: "column" }}>
-        <NavBar onDrawerToggle={handleDrawerToggle} user={data || {}} />
-        <Box
-          m="1.5rem 1.5rem"
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            minHeight: "90vh",
-            pb: 10,
-          }}
-        >
-          <Outlet />
-        </Box>
-      </Box>
-    </Box>
-  );
-}
+  return <FullLayout />;
+};
 
 export default ProtectedLayout;

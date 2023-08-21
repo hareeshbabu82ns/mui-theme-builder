@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import {
+  Box,
   FormControl,
   InputLabel,
   MenuItem,
   Select,
   Stack,
+  useMediaQuery,
   useTheme,
 } from "@mui/material";
 
@@ -21,15 +23,15 @@ const ThemePage = () => {
 
   const params = useParams();
 
-  const [component, setComponent] = useState(params?.component ?? "");
+  const [ component, setComponent ] = useState( params?.component ?? "" );
 
-  const handleComponentSelect = (e) => {
-    setComponent(e.target.value);
-    navigate(e.target.value);
+  const handleComponentSelect = ( e ) => {
+    setComponent( e.target.value );
+    navigate( e.target.value );
   };
 
   return (
-    <>
+    <Box margin={{ xs: "1rem 2rem", lg: "0" }}>
       <FlexBetween>
         <Header title="Theme Settings" subtitle="Manage Theme Settings" />
       </FlexBetween>
@@ -55,18 +57,18 @@ const ThemePage = () => {
               onChange={handleComponentSelect}
               displayEmpty
             >
-              {COMPONENT_SETTINGS.map((c) => (
+              {COMPONENT_SETTINGS.map( ( c ) => (
                 <MenuItem key={c.id} value={c.id}>
                   {c.title}
                 </MenuItem>
-              ))}
+              ) )}
             </Select>
           </FormControl>
 
           <Outlet />
         </Stack>
       </Stack>
-    </>
+    </Box>
   );
 };
 

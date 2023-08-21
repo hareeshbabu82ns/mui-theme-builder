@@ -24,29 +24,29 @@ import SignUpIcon from "@mui/icons-material/Password";
 import { Link, useLocation } from "react-router-dom";
 import muiLogo from "assets/mui.svg";
 
-const SideBar = (props) => {
+const SideBar = ( props ) => {
   const { user, sx, window, open, ...others } = props;
 
   const theme = useTheme();
 
   const location = useLocation();
 
-  const [selectedIndex, setSelectedIndex] = useState(
-    location.pathname.replace("/", "")
+  const [ selectedIndex, setSelectedIndex ] = useState(
+    location.pathname.replace( "/", "" )
   );
 
-  const trigger = useScrollTrigger({
+  const trigger = useScrollTrigger( {
     disableHysteresis: true,
     threshold: 0,
     target: window ? window() : undefined,
-  });
+  } );
 
-  useEffect(() => {
-    setSelectedIndex(location.pathname.replace("/", ""));
-  }, [location.pathname]);
+  useEffect( () => {
+    setSelectedIndex( location.pathname.replace( "/", "" ) );
+  }, [ location.pathname ] );
 
-  const handleListItemClick = (event, index) => {
-    setSelectedIndex(index);
+  const handleListItemClick = ( event, index ) => {
+    setSelectedIndex( index );
   };
 
   return (
@@ -74,7 +74,7 @@ const SideBar = (props) => {
         </Toolbar>
       </AppBar>
       <List>
-        {categories.map(({ id, children }, index) => (
+        {categories.map( ( { id, children }, index ) => (
           <Box key={`${id}-${index}`}>
             {id.length > 0 && (
               <ListItem sx={{ py: 2, px: 3 }}>
@@ -88,13 +88,13 @@ const SideBar = (props) => {
                 </ListItemText>
               </ListItem>
             )}
-            {children.map(({ id: childId, icon, to }) => (
+            {children.map( ( { id: childId, icon, to } ) => (
               <ListItem key={`${id}-${childId}`}>
                 <ListItemButton
                   selected={
                     selectedIndex === childId || location.pathname === to
                   }
-                  onClick={(event) => handleListItemClick(event, childId)}
+                  onClick={( event ) => handleListItemClick( event, childId )}
                   component={Link}
                   to={to}
                 >
@@ -102,9 +102,9 @@ const SideBar = (props) => {
                   <ListItemText>{childId}</ListItemText>
                 </ListItemButton>
               </ListItem>
-            ))}
+            ) )}
           </Box>
-        ))}
+        ) )}
       </List>
     </Drawer>
   );

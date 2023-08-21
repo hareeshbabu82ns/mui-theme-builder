@@ -151,7 +151,10 @@ const ThemeCodePage = () => {
   `;
 
   return (
-    <Box sx={{ display: "flex", flex: 1, flexDirection: "column" }}>
+    <Box
+      margin={{ xs: "1rem 2rem", lg: "0" }}
+      sx={{ display: "flex", flex: 1, flexDirection: "column" }}
+    >
       <FlexBetween>
         <Header title="Theme Code" subtitle="Theme Code based on Settings" />
       </FlexBetween>
@@ -166,6 +169,8 @@ const ThemeCodePage = () => {
                 <SyntaxHighlighter
                   children={String(children).replace(/\n$/, "")}
                   style={dark}
+                  showLineNumbers={true}
+                  showInlineLineNumbers={true}
                   language={match[1]}
                   PreTag="div"
                   {...props}

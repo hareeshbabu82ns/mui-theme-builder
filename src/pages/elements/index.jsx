@@ -12,7 +12,7 @@ import Header from "components/Header";
 const ElementsPage = () => {
   const boxSX = { mb: 8 };
   return (
-    <Container maxWidth="xl">
+    <Box margin={{ xs: "1rem 2rem", lg: "0" }}>
       <FlexBetween>
         <Header title="Components" subtitle="Simple Components" />
       </FlexBetween>
@@ -30,7 +30,7 @@ const ElementsPage = () => {
       <Accordions />
       <Box sx={boxSX} />
       <Snackbars />
-    </Container>
+    </Box>
   );
 };
 
